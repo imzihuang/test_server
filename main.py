@@ -34,7 +34,7 @@ def make_app():
     settings = {
         'cookie_secret': "bZJc2sWbQLKos6GkHn/VB9oXwQt8S0R0kRvJ5/xJ89E=",
     }
-    return My_Application(api_handlers + views_handlers, **settings)
+    return My_Application(api_handlers, **settings)
 
 if __name__ == "__main__":
     app = make_app()
