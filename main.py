@@ -11,7 +11,7 @@ import settings
 import logging
 
 define("port", default=8585, help="run on the given port", type=int)
-setproctitle('edu:server')
+setproctitle('game:server')
 
 if settings.default_settings.get("log_info", ""):
     logging.basicConfig(level=logging.INFO,
