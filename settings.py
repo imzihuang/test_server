@@ -17,6 +17,8 @@ default_settings = {
     'log_info': "./log/edu_info.log",
     'log_error': "./log/edu_error.log",
     'excel_path': '/excel/tmp',
+    'book_ids': ["1","2","3","4","5","6","7","8"],
+    'stance_items': {"1":{"monster_id": "1", 'lvl':1}}
 }
 
 models = []

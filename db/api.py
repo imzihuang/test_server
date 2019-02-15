@@ -62,6 +62,13 @@ def wxuser_get(id):
         return None
     return result
 
+def wxuser_get_session_key(session_key):
+    query = model_query(models.UserInfo)
+    result = query.filter_by(session_key=session_key).first()
+    if not result:
+        return None
+    return result
+
 def wxuser_list(offset=0, limit=1000, **filters):
     query = model_query(models.UserInfo, order=True, **filters)
     if offset:
@@ -83,100 +90,42 @@ def wxuser_deleted(id):
         },
         synchronize_session=False)
 
-#####################wx user end################################
+#####################wx user end##################################
 
-#####################monster begin################################
-def monster_create(values):
+#####################wx user signin begin################################
+def signin_create(values):
     if not values.get('id'):
         values['id'] = common_util.create_id()
-    wxuser_ref = models.MonsterInfo()
-    wxuser_ref.update(values)
+    signin_ref = models.SignIn()
+    signin_ref.update(values)
     session = get_session()
     with session.begin():
-        wxuser_ref.save(session)
+        signin_ref.save(session)
         return values
 
-def monster_update(id, values):
-    query = model_query(models.MonsterInfo).filter_by(id=id)
+def signin_update(id, values):
+    query = model_query(models.SignIn).filter_by(id=id)
     result = query.update(values)
     if not result:
         return None
     return result
 
-def monster_get(id):
-    query = model_query(models.MonsterInfo)
-    result = query.filter_by(id=id).first()
+def signin_get_userid(user_id):
+    query = model_query(models.SignIn)
+    result = query.filter_by(user_id=user_id).first()
     if not result:
         return None
     return result
 
-def monster_list(offset=0, limit=1000, **filters):
-    query = model_query(models.MonsterInfo, order=True, **filters)
+def signin_list(offset=0, limit=1000, **filters):
+    query = model_query(models.SignIn, order=True, **filters)
     if offset:
         query = query.offset(offset)
     if limit:
         query = query.limit(limit)
     return query.all()
 
-def monster_count(**filters):
-    query = model_query(models.MonsterInfo, **filters)
+def signin_count(**filters):
+    query = model_query(models.SignIn, **filters)
     return query.count()
-
-def monster_deleted(id):
-    session = get_session()
-    with session.begin():
-        query = model_query(models.MonsterInfo, session=session, id=id)
-        query.update({
-            "deleted": True
-        },
-        synchronize_session=False)
-
-#####################monster end################################
-
-##################### user monster begin################################
-def usermonster_create(values):
-    if not values.get('id'):
-        values['id'] = common_util.create_id()
-    wxuser_ref = models.UserMonster()
-    wxuser_ref.update(values)
-    session = get_session()
-    with session.begin():
-        wxuser_ref.save(session)
-        return values
-
-def usermonster_update(id, values):
-    query = model_query(models.UserMonster).filter_by(id=id)
-    result = query.update(values)
-    if not result:
-        return None
-    return result
-
-def usermonster_get(id):
-    query = model_query(models.UserMonster)
-    result = query.filter_by(id=id).first()
-    if not result:
-        return None
-    return result
-
-def usermonster_list(offset=0, limit=1000, **filters):
-    query = model_query(models.UserMonster, order=True, **filters)
-    if offset:
-        query = query.offset(offset)
-    if limit:
-        query = query.limit(limit)
-    return query.all()
-
-def usermonster_count(**filters):
-    query = model_query(models.UserMonster, **filters)
-    return query.count()
-
-def usermonster_deleted(id):
-    session = get_session()
-    with session.begin():
-        query = model_query(models.UserMonster, session=session, id=id)
-        query.update({
-            "deleted": True
-        },
-        synchronize_session=False)
-
-##################### user monster end################################
+#####################wx user signin end################################

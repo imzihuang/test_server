@@ -10,7 +10,7 @@ def _handlers():
         prefix += '/'
     return [
         (r'/(?P<infos_obj>.+)/infos$', infos.InfosHandler),
-        (r'/(?P<action>.+)/wx_action$', wx_action.WXActionHandler),
+        (r'/(?P<action>.+)/wx_action$', wx_action.WXActionHandler, default_settings),
         (prefix + r'(.*\.(css|png|js))', StaticFileHandler,
          {'path': default_settings.get('static_path')}),
     ]
