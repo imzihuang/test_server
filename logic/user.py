@@ -13,7 +13,7 @@ class WXUserLogic(Logic):
         super(WXUserLogic, self).__init__()
 
     def input(self, code="", openid="", session_key="", user_name="", recommend_id="",
-              stance_items=dict(),base_data=[],book_ids=[]):
+              stance_items=[],base_data=[],book_ids=[]):
         if db_api.wxuser_list(openid=openid):
             raise ParamExist(openid=openid)
 
@@ -85,13 +85,13 @@ class WXUserLogic(Logic):
         #获取所拥有的怪物信息 monsterdata
         views_list = self.views(wx_list)
         for view in views_list:
-            stance_items = view.get("stance_items")
+            stance_items = view.get("stance_items", [])
             view.update({"stance_items": json.loads(stance_items)})
 
-            base_data = view.get("base_data")
+            base_data = view.get("base_data", [])
             view.update({"base_data": json.loads(base_data)})
 
-            book_ids = view.get("book_ids")
+            book_ids = view.get("book_ids",[])
             view.update({"book_ids": json.loads(book_ids)})
 
         wx_count = db_api.wxuser_count(**filters)
