@@ -95,7 +95,7 @@ class WXUserLogic(Logic):
             view.update({"book_ids": json.loads(book_ids)})
 
         wx_count = db_api.wxuser_count(**filters)
-        return {"count": wx_count, "state": 0, "message": "query success", "data": wx_list}
+        return {"count": wx_count, "state": 0, "message": "query success", "data": views_list}
 
 
     def info_by_openid(self, openid):
