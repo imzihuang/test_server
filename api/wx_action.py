@@ -72,7 +72,7 @@ class WXActionHandler(RequestHandler):
                           recommend_id=recommend_id,
                           stance_items=self.stance_items,
                           book_ids=self.book_ids)
-            self.finish(json.dumps({'state': 0, 'session_code': _.get("id")}))
+            self.finish(json.dumps({'state': 0, 'session_key': _.get("id")}))
 
     def signin(self):
         session_key = self.get_argument('session_key', '')
