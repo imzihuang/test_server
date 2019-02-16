@@ -56,7 +56,7 @@ class WXActionHandler(RequestHandler):
         response = http_client.fetch("%s?%s"%(url, parse.urlencode(params)))
         dic_body = json.loads(response.body)
         openid = dic_body.get('openid')
-        session_key = dic_body.get('sessutilion_key')
+        session_key = dic_body.get('session_key')
 
         #存储openid和session_key,并返回识别session串
         _op = WXUserLogic()
