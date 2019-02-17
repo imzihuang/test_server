@@ -29,11 +29,11 @@ class InfosHandler(RequestHandler):
         limit = int(self.get_argument('limit', 100))
         offset = int(self.get_argument('offset', 0))
         user_name = self.get_argument('user_name', '')
-        session_key = self.get_argument('session_key', '')
+        id = self.get_argument('id', '')
         _op = WXUserLogic()
         _value = {
             "user_name": user_name,
-            "session_key": session_key
+            "id": id
         }
         _= _op.infos(limit=limit, offset=offset, **_value)
         if _:
@@ -44,18 +44,18 @@ class InfosHandler(RequestHandler):
     def recommend(self):
         limit = int(self.get_argument('limit', 100))
         offset = int(self.get_argument('offset', 0))
-        session_key = self.get_argument('session_key', '')
+        id = self.get_argument('id', '')
         _op = WXUserLogic()
-        _ = _op.info_recommend(session_key, limit=limit, offset=offset)
+        _ = _op.info_recommend(id, limit=limit, offset=offset)
         if _:
             self.finish(json.dumps(_))
         else:
             self.finish(json.dumps({'state': 1, 'message': 'recommend error'}))
 
     def signin_status(self):
-        session_key = self.get_argument('session_key', '')
+        id = self.get_argument('id', '')
         _op = SigninLogic()
-        continuous = _op.sign_status(session_key)
+        continuous = _op.sign_status(id)
         if continuous>-1:
             self.finish(json.dumps({"state": 0, "continuous": continuous}))
         else:

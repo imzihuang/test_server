@@ -63,7 +63,7 @@ class WXActionHandler(RequestHandler):
         exit_app = _op.info_by_openid(openid=openid)
         if exit_app:
             _op.update(exit_app.get("id"), session_key=session_key)
-            self.finish(json.dumps({'state': 0, 'session_key': exit_app.get("session_key")}))
+            self.finish(json.dumps({'state': 0, 'id': exit_app.get("id")}))
         else:
             _ = _op.input(code=code,
                           openid=openid,
@@ -72,26 +72,26 @@ class WXActionHandler(RequestHandler):
                           recommend_id=recommend_id,
                           stance_items=self.stance_items,
                           book_ids=self.book_ids)
-            self.finish(json.dumps({'state': 0, 'session_key': _.get("session_key")}))
+            self.finish(json.dumps({'state': 0, 'id': _.get("id")}))
 
     def signin(self):
-        session_key = self.get_argument('session_key', '')
+        id = self.get_argument('id', '')
         _op = SigninLogic()
-        _ = _op.user_signin(session_key)
+        _ = _op.user_signin(id)
         if _:
             self.finish(json.dumps({'state': 0}))
         else:
             self.finish(json.dumps({'state': 1}))
 
     def update_gamedata(self):
-        session_key = self.get_argument('session_key', '')
+        id = self.get_argument('id', '')
         property_glod = self.get_argument('property_glod', 0)
         property_diamond = self.get_argument('property_diamond', 0)
         stance_items = self.get_argument('stance_items', '{}')
         base_data = self.get_argument('base_data', '[]')
         book_ids = self.get_argument('book_ids', '[]')
         _op = WXUserLogic()
-        _ = _op.update_gamedata(session_key,
+        _ = _op.update_gamedata(id,
                                 property_glod = property_glod,
                                 property_diamond = property_diamond,
                                 stance_items = stance_items,

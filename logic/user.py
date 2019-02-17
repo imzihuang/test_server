@@ -46,14 +46,14 @@ class WXUserLogic(Logic):
         _ = db_api.wxuser_update(id, kwargs)
         return _
 
-    def update_gamedata(self, session_key, property_glod=0,
+    def update_gamedata(self, id, property_glod=0,
                         property_diamond=0,
                         stance_items="{}",
                         base_data="[]",
                         book_ids="[]"):
-        if not session_key:
+        if not id:
             return
-        user_info = db_api.wxuser_get_session_key(session_key)
+        user_info = db_api.wxuser_get(id)
         if not user_info:
             return
         stance_items = json.loads(stance_items)
@@ -74,13 +74,13 @@ class WXUserLogic(Logic):
         return _
 
 
-    def infos(self, user_name="", session_key="", limit=100, offset=1):
+    def infos(self, user_name="", id="", limit=100, offset=1):
         offset = (offset - 1) * limit if offset > 0 else 0
         filters = dict()
         if user_name:
             filters.update({"user_name": user_name})
-        if session_key:
-            filters.update({"session_key": session_key})
+        if id:
+            filters.update({"id": id})
         wx_list = db_api.wxuser_list(offset=offset, limit=limit, **filters)
         #获取所拥有的怪物信息 monsterdata
         views_list = self.views(wx_list)
@@ -105,18 +105,15 @@ class WXUserLogic(Logic):
         if wx_infos:
             return self.views(wx_infos[0])
 
-    def info_recommend(self, session_key, limit=100, offset=1):
+    def info_recommend(self, id, limit=100, offset=1):
         """
         获取推荐人
         :param session_key:
         :return:
         """
-        if not session_key:
+        if not id:
             return
-        user_info = db_api.wxuser_get_session_key(session_key)
-        if not user_info:
-            return {"count": 0, "state": 0, "message": "query success", "data": []}
-        wx_list = db_api.wxuser_list(offset=offset, limit=limit, recommend_id=user_info.id)
+        wx_list = db_api.wxuser_list(offset=offset, limit=limit, recommend_id=id)
         wx_count = db_api.wxuser_count(recommend_id=user_info.id)
         return {"count": wx_count, "state": 0, "message": "query success", "data": self.views(wx_list)}
 

@@ -13,10 +13,10 @@ class SigninLogic(Logic):
     def __init__(self):
         super(SigninLogic, self).__init__()
 
-    def user_signin(self, session_key):
-        if not session_key:
+    def user_signin(self, id):
+        if not id:
             return False
-        user_info = db_api.wxuser_get_session_key(session_key)
+        user_info = db_api.wxuser_get(id)
         if not user_info:
             return False
         sign_info = db_api.signin_get_userid(user_info.id)
@@ -35,10 +35,10 @@ class SigninLogic(Logic):
 
         return True
 
-    def sign_status(self, session_key):
-        if not session_key:
+    def sign_status(self, id):
+        if not id:
             return -1
-        user_info = db_api.wxuser_get_session_key(session_key)
+        user_info = db_api.wxuser_get(id)
         if not user_info:
             return -1
         sign_info = db_api.signin_get_userid(user_info.id)
