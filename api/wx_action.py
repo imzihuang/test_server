@@ -63,7 +63,7 @@ class WXActionHandler(RequestHandler):
         exit_app = _op.info_by_openid(openid=openid)
         if exit_app:
             _op.update(exit_app.get("id"), session_key=session_key)
-            self.finish(json.dumps({'state': 0, 'session_code': exit_app.get("id"), 'phone': exit_app.get("phone","")}))
+            self.finish(json.dumps({'state': 0, 'session_key': exit_app.get("id")}))
         else:
             _ = _op.input(code=code,
                           openid=openid,
