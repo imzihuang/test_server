@@ -63,7 +63,7 @@ class WXActionHandler(RequestHandler):
         exit_app = _op.info_by_openid(openid=openid)
         if exit_app:
             _op.update(exit_app.get("id"), session_key=session_key)
-            self.finish(json.dumps({'state': 0, 'session_key': exit_app.get("id")}))
+            self.finish(json.dumps({'state': 0, 'session_key': exit_app.get("session_key")}))
         else:
             _ = _op.input(code=code,
                           openid=openid,
@@ -72,7 +72,7 @@ class WXActionHandler(RequestHandler):
                           recommend_id=recommend_id,
                           stance_items=self.stance_items,
                           book_ids=self.book_ids)
-            self.finish(json.dumps({'state': 0, 'session_key': _.get("id")}))
+            self.finish(json.dumps({'state': 0, 'session_key': _.get("session_key")}))
 
     def signin(self):
         session_key = self.get_argument('session_key', '')
