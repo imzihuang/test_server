@@ -36,7 +36,7 @@ class UserInfo(Base, ModelBase):
     property_glod = Column(Integer, default=0)
     property_diamond = Column(Integer, default=0)
     stance_items = Column(VARCHAR(3000), nullable=False)
-    base_data = Column(VARCHAR(3000), nullable=False)
+    base_items = Column(VARCHAR(3000), nullable=False)
     book_ids = Column(VARCHAR(1000), nullable=False)
     create_time = Column(DateTime, default=datetime.now, nullable=False)
     updated_time = Column(DateTime, default=datetime.now, onupdate=datetime.now)

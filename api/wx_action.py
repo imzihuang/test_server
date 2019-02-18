@@ -95,8 +95,8 @@ class WXActionHandler(RequestHandler):
                                 property_glod = property_glod,
                                 property_diamond = property_diamond,
                                 stance_items = stance_items,
-                                base_items = base_items,
-                                book_ids = book_ids
+                                base_items=base_items,
+                                book_ids = book_ids,
                                 )
         if _:
             self.finish(json.dumps({'state': 0}))

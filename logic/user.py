@@ -13,7 +13,7 @@ class WXUserLogic(Logic):
         super(WXUserLogic, self).__init__()
 
     def input(self, code="", openid="", session_key="", user_name="", recommend_id="",
-              stance_items=[],base_data=[],book_ids=[]):
+              stance_items=[],base_items=[],book_ids=[]):
         if db_api.wxuser_list(openid=openid):
             raise ParamExist(openid=openid)
 
@@ -33,7 +33,7 @@ class WXUserLogic(Logic):
             "property_glod": 100, #default
             "property_diamond": 10, #default
             "stance_items": json.dumps(stance_items),
-            "base_data":json.dumps(base_data),
+            "base_items":json.dumps(base_items),
             "book_ids":json.dumps(book_ids)
         }
 
@@ -49,7 +49,7 @@ class WXUserLogic(Logic):
     def update_gamedata(self, id, property_glod=0,
                         property_diamond=0,
                         stance_items="{}",
-                        base_data="[]",
+                        base_items="[]",
                         book_ids="[]"):
         if not id:
             return
@@ -57,7 +57,7 @@ class WXUserLogic(Logic):
         if not user_info:
             return
         stance_items = json.loads(stance_items)
-        base_data = json.loads(base_data)
+        base_items = json.loads(base_items)
         book_ids = json.loads(book_ids)
         values = dict()
         if property_glod>0:
@@ -66,8 +66,8 @@ class WXUserLogic(Logic):
             values.update({"property_diamond": property_diamond})
         if stance_items:
             values.update({"stance_items": stance_items})
-        if base_data:
-            values.update({"base_data": base_data})
+        if base_items:
+            values.update({"base_items": base_items})
         if book_ids:
             values.update({"book_ids": book_ids})
         _ = db_api.wxuser_update(user_info.id, values)
@@ -88,8 +88,8 @@ class WXUserLogic(Logic):
             stance_items = view.get("stance_items", [])
             view.update({"stance_items": json.loads(stance_items)})
 
-            base_data = view.get("base_data", [])
-            view.update({"base_data": json.loads(base_data)})
+            base_items = view.get("base_items", [])
+            view.update({"base_items": json.loads(base_items)})
 
             book_ids = view.get("book_ids",[])
             view.update({"book_ids": json.loads(book_ids)})
