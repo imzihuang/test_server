@@ -88,14 +88,14 @@ class WXActionHandler(RequestHandler):
         property_glod = self.get_argument('property_glod', 0)
         property_diamond = self.get_argument('property_diamond', 0)
         stance_items = self.get_argument('stance_items', '{}')
-        base_data = self.get_argument('base_data', '[]')
+        base_items = self.get_argument('base_items', '[]')
         book_ids = self.get_argument('book_ids', '[]')
         _op = WXUserLogic()
         _ = _op.update_gamedata(id,
                                 property_glod = property_glod,
                                 property_diamond = property_diamond,
                                 stance_items = stance_items,
-                                base_data = base_data,
+                                base_items = base_items,
                                 book_ids = book_ids
                                 )
         if _:
