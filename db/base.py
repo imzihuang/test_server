@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy.ext.declarative import DeclarativeMeta
-from sqlalchemy.orm import object_mapper, sessionmaker
-from sqlalchemy import create_engine
+from sqlalchemy.orm import object_mapper
 import simplejson
 import six
 from datetime import datetime
+import threading
 from util.ini_client import ini_load
-
+from enginefacade import EngineFacade
 
 _conf = ini_load('config/mysql.ini')
 _dic_con = _conf.get_fields('product_db')
@@ -21,14 +21,31 @@ connect = 'mysql://{0}:{1}@{2}:{3}/{4}?charset=utf8'.format(
     _dic_con.get('database')
 )
 
+_LOCK = threading.Lock()
+_FACADE = None
+
+
+def _create_facade_lazily():
+    global _LOCK
+    with _LOCK:
+        global _FACADE
+        if _FACADE is None:
+            args = {
+                "encoding": "utf8",
+                "convert_unicode": True
+            }
+            _FACADE = EngineFacade(connect, **args)
+
+        return _FACADE
+
 def get_engine():
-    return create_engine(connect)
+    facade = _create_facade_lazily()
+    return facade.get_engine()
 
 
 def get_session():
-    engine = get_engine()
-    DBSession = sessionmaker(bind=engine)
-    return DBSession()
+    facade = _create_facade_lazily()
+    return facade.get_session()
 
 
 class ModelBase(six.Iterator):
