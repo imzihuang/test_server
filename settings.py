@@ -17,7 +17,7 @@ default_settings = {
     'log_info': "./log/edu_info.log",
     'log_error': "./log/edu_error.log",
     'excel_path': '/excel/tmp',
-    'book_ids': ["0101","0102","0103","0104","0201","0202","0203","0204"],
+    'book_ids': ["0101"],
     'stance_items': [{"m_id": "0101", 'lvl':1, "index":1}]
 }
 
