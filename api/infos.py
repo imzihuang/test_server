@@ -22,9 +22,8 @@ class InfosHandler(RequestHandler):
             if infos_obj == "signin_status":
                 self.signin_status()
 
-            if info_obj == "share_num":
+            if infos_obj == "share_num":
                 self.share_num()
-
 
         except Exception as ex:
             LOG.error("query %s error:%s"%(infos_obj, ex))
