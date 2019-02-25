@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import time
 from util.exception import ParamExist
 from db import api as db_api
 from logic import Logic
@@ -95,7 +96,12 @@ class WXUserLogic(Logic):
             view.update({"book_ids": json.loads(book_ids)})
 
         wx_count = db_api.wxuser_count(**filters)
-        return {"count": wx_count, "state": 0, "message": "query success", "data": views_list}
+        return {"count": wx_count,
+                "state": 0,
+                "message": "query success",
+                "data": views_list,
+                "current_time": time.time()*1000#单位毫秒
+                }
 
 
     def info_by_openid(self, openid):
