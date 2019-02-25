@@ -8,6 +8,7 @@ import logging
 import json
 from logic.user import WXUserLogic
 from logic.signin import SigninLogic
+from logic.share import ShareLogic
 
 from util.ini_client import ini_load
 
@@ -30,6 +31,8 @@ class WXActionHandler(RequestHandler):
                 self.update_gamedata()
             if action == "signin":
                 self.signin()
+            if action == "share":
+                self.share()
         except ParamExist as ex:
             LOG.error("Wx action %s error:%s" % (action, ex))
             self.finish(json.dumps({'state': 9, 'message': 'params exit'}))
@@ -98,6 +101,15 @@ class WXActionHandler(RequestHandler):
                                 base_items=base_items,
                                 book_ids = book_ids,
                                 )
+        if _:
+            self.finish(json.dumps({'state': 0}))
+        else:
+            self.finish(json.dumps({'state': 1}))
+
+    def action(self):
+        id = self.get_argument('id', '')
+        _op = ShareLogic()
+        _ = _op.user_share(id)
         if _:
             self.finish(json.dumps({'state': 0}))
         else:

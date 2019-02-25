@@ -57,6 +57,18 @@ class SignIn(Base, ModelBase):
     def to_dict(self):
         return _to_dict(self)
 
+
+class Share(Base, ModelBase):
+    __tablename__ = 'share'
+    id = Column(VARCHAR(36), primary_key=True)
+    user_id = Column(VARCHAR(36), primary_key=True)
+    share_num = Column(Integer, default=0)
+    lastdate = Column(Date, nullable=False)
+    deleted = Column(Boolean, default=False)
+
+    def to_dict(self):
+        return _to_dict(self)
+
 def register_db():
     engine = get_engine()
     Base.metadata.create_all(engine)

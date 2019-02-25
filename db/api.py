@@ -129,3 +129,41 @@ def signin_count(**filters):
     query = model_query(models.SignIn, **filters)
     return query.count()
 #####################wx user signin end################################
+
+#####################wx user share begin################################
+def share_create(values):
+    if not values.get('id'):
+        values['id'] = common_util.create_id()
+    signin_ref = models.Share()
+    signin_ref.update(values)
+    session = get_session()
+    with session.begin():
+        signin_ref.save(session)
+        return values
+
+def share_update(id, values):
+    query = model_query(models.Share).filter_by(id=id)
+    result = query.update(values)
+    if not result:
+        return None
+    return result
+
+def share_get_userid(user_id):
+    query = model_query(models.Share)
+    result = query.filter_by(user_id=user_id).first()
+    if not result:
+        return None
+    return result
+
+def share_list(offset=0, limit=1000, **filters):
+    query = model_query(models.Share, order=True, **filters)
+    if offset:
+        query = query.offset(offset)
+    if limit:
+        query = query.limit(limit)
+    return query.all()
+
+def share_count(**filters):
+    query = model_query(models.Share, **filters)
+    return query.count()
+#####################wx user share end################################

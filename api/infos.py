@@ -6,6 +6,7 @@ import logging
 
 from logic.user import WXUserLogic
 from logic.signin import SigninLogic
+from logic.share import ShareLogic
 
 LOG = logging.getLogger(__name__)
 
@@ -20,6 +21,10 @@ class InfosHandler(RequestHandler):
 
             if infos_obj == "signin_status":
                 self.signin_status()
+
+            if info_obj == "share_num":
+                self.share_num()
+
 
         except Exception as ex:
             LOG.error("query %s error:%s"%(infos_obj, ex))
@@ -61,3 +66,11 @@ class InfosHandler(RequestHandler):
         else:
             self.finish(json.dumps({"state": 1, "continuous": continuous}))
 
+    def share_num(self):
+        id = self.get_argument('id', '')
+        _op = ShareLogic()
+        share_num = _op.get_share_num(id)
+        if share_num > -1:
+            self.finish(json.dumps({"state": 0, "share_num": share_num}))
+        else:
+            self.finish(json.dumps({"state": 1, "share_num": share_num}))
