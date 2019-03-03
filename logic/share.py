@@ -49,7 +49,7 @@ class ShareLogic(Logic):
         share_info = db_api.share_get_userid(user_info.id)
         if(share_info.lastdate == datetime.date.today()):
             #今日分享过
-            return sign_info.share_num
+            return share_info.share_num
         #未签到过
         return 0
 
