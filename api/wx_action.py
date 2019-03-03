@@ -88,8 +88,8 @@ class WXActionHandler(RequestHandler):
 
     def update_gamedata(self):
         id = self.get_argument('id', '')
-        property_glod = self.get_argument('property_glod', 0)
-        property_diamond = self.get_argument('property_diamond', 0)
+        property_glod = int(self.get_argument('property_glod', 0))
+        property_diamond = int(self.get_argument('property_diamond', 0))
         stance_items = self.get_argument('stance_items', '{}')
         base_items = self.get_argument('base_items', '[]')
         book_ids = self.get_argument('book_ids', '[]')
