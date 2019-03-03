@@ -106,7 +106,7 @@ class WXActionHandler(RequestHandler):
         else:
             self.finish(json.dumps({'state': 1}))
 
-    def action(self):
+    def share(self):
         id = self.get_argument('id', '')
         _op = ShareLogic()
         _ = _op.user_share(id)
