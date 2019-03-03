@@ -57,9 +57,9 @@ class WXUserLogic(Logic):
         user_info = db_api.wxuser_get(id)
         if not user_info:
             return
-        stance_items = json.loads(stance_items)
-        base_items = json.loads(base_items)
-        book_ids = json.loads(book_ids)
+        #stance_items = json.loads(stance_items)
+        #base_items = json.loads(base_items)
+        #book_ids = json.loads(book_ids)
         values = dict()
         if property_glod>0:
             values.update({"property_glod": property_glod})
