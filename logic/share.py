@@ -47,6 +47,8 @@ class ShareLogic(Logic):
         if not user_info:
             return -1
         share_info = db_api.share_get_userid(user_info.id)
+        if not share_info:
+            return -1
         if(share_info.lastdate == datetime.date.today()):
             #今日分享过
             return share_info.share_num
