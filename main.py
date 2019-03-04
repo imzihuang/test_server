@@ -10,7 +10,7 @@ from api import api_handlers
 import settings
 import logging
 
-define("port", default=8585, help="run on the given port", type=int)
+define("port", default=8081, help="run on the given port", type=int)
 setproctitle('game:server')
 
 if settings.default_settings.get("log_info", ""):
