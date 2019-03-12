@@ -19,9 +19,10 @@ LOG = logging.getLogger(__name__)
 
 
 class WXActionHandler(RequestHandler):
-    def initialize(self, book_ids, stance_items, **kwds):
+    def initialize(self, book_ids, stance_items, buy_nums, **kwds):
         self.book_ids = book_ids
         self.stance_items = stance_items
+        self.buy_nums = buy_nums
 
     def post(self, action):
         try:
@@ -74,7 +75,8 @@ class WXActionHandler(RequestHandler):
                           user_name=user_name,
                           recommend_id=recommend_id,
                           stance_items=self.stance_items,
-                          book_ids=self.book_ids)
+                          book_ids=self.book_ids,
+                          buy_nums=self.buy_nums)
             self.finish(json.dumps({'state': 0, 'id': _.get("id")}))
 
     def signin(self):

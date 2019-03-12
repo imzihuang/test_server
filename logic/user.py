@@ -14,7 +14,7 @@ class WXUserLogic(Logic):
         super(WXUserLogic, self).__init__()
 
     def input(self, code="", openid="", session_key="", user_name="", recommend_id="",
-              stance_items=[],base_items=[],book_ids=[]):
+              stance_items=[], base_items=[], book_ids=[], buy_nums=[]):
         if db_api.wxuser_list(openid=openid):
             raise ParamExist(openid=openid)
 
@@ -35,7 +35,8 @@ class WXUserLogic(Logic):
             "property_diamond": 10, #default
             "stance_items": json.dumps(stance_items),
             "base_items":json.dumps(base_items),
-            "book_ids":json.dumps(book_ids)
+            "book_ids":json.dumps(book_ids),
+            "buy_nums":json.dumps(buy_nums)
         }
 
         wx_obj = db_api.wxuser_create(values)
@@ -49,17 +50,15 @@ class WXUserLogic(Logic):
 
     def update_gamedata(self, id, property_glod=0,
                         property_diamond=0,
-                        stance_items="{}",
-                        base_items="[]",
-                        book_ids="[]"):
+                        stance_items="",
+                        base_items="",
+                        book_ids="",
+                        buy_nums=""):
         if not id:
             return
         user_info = db_api.wxuser_get(id)
         if not user_info:
             return
-        #stance_items = json.loads(stance_items)
-        #base_items = json.loads(base_items)
-        #book_ids = json.loads(book_ids)
         values = dict()
         if property_glod>0:
             values.update({"property_glod": property_glod})
@@ -71,6 +70,8 @@ class WXUserLogic(Logic):
             values.update({"base_items": base_items})
         if book_ids:
             values.update({"book_ids": book_ids})
+        if buy_nums:
+            values.update({"buy_nums": buy_nums})
         _ = db_api.wxuser_update(user_info.id, values)
         return _
 
@@ -94,6 +95,9 @@ class WXUserLogic(Logic):
 
             book_ids = view.get("book_ids",[])
             view.update({"book_ids": json.loads(book_ids)})
+
+            buy_nums = view.get("buy_nums",[])
+            view.update({"buy_nums": json.loads(buy_nums)})
 
         wx_count = db_api.wxuser_count(**filters)
         return {"count": wx_count,
