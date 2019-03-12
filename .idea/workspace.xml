@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa36278b-515b-413d-9880-18188eddbb8e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/api/wx_action.py" afterPath="$PROJECT_DIR$/api/wx_action.py" />
       <change beforePath="$PROJECT_DIR$/db/models.py" afterPath="$PROJECT_DIR$/db/models.py" />
-      <change beforePath="$PROJECT_DIR$/logic/user.py" afterPath="$PROJECT_DIR$/logic/user.py" />
       <change beforePath="$PROJECT_DIR$/settings.py" afterPath="$PROJECT_DIR$/settings.py" />
     </list>
     <ignored path="test_server.iws" />
@@ -26,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="40" column="12" lean-forward="false" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="12" />
+            <state relative-caret-position="300">
+              <caret line="40" column="31" lean-forward="false" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
               <folding>
                 <element signature="e#42#118#0" expanded="true" />
               </folding>
@@ -94,7 +91,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logic/user.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="467">
@@ -107,8 +104,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="13" />
+            <state relative-caret-position="432">
+              <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -138,8 +135,9 @@
       <find>share_num</find>
       <find>sign_info</find>
       <find>lastdate</find>
-      <find>Integer</find>
       <find>stance_items</find>
+      <find>book_ids</find>
+      <find>Integer</find>
     </findStrings>
     <dirStrings>
       <dir>E:\code\gitlib\test_server</dir>
@@ -162,10 +160,10 @@
         <option value="$PROJECT_DIR$/db/api.py" />
         <option value="$PROJECT_DIR$/api/infos.py" />
         <option value="$PROJECT_DIR$/logic/share.py" />
-        <option value="$PROJECT_DIR$/settings.py" />
-        <option value="$PROJECT_DIR$/db/models.py" />
         <option value="$PROJECT_DIR$/api/wx_action.py" />
         <option value="$PROJECT_DIR$/logic/user.py" />
+        <option value="$PROJECT_DIR$/settings.py" />
+        <option value="$PROJECT_DIR$/db/models.py" />
       </list>
     </option>
   </component>
@@ -203,16 +201,6 @@
             <path>
               <item name="test_server" type="b2602c69:ProjectViewProjectNode" />
               <item name="test_server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="test_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="test_server" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="test_server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="test_server" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -763,30 +751,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logic/share.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
           <caret line="50" column="20" lean-forward="true" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
           <folding>
             <element signature="e#43#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="40" column="12" lean-forward="false" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="12" />
-          <folding>
-            <element signature="e#42#118#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -806,6 +776,24 @@
         <state relative-caret-position="467">
           <caret line="102" column="34" lean-forward="true" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="34" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="40" column="31" lean-forward="false" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+          <folding>
+            <element signature="e#42#118#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

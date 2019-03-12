@@ -38,7 +38,7 @@ class UserInfo(Base, ModelBase):
     stance_items = Column(VARCHAR(3000), nullable=False)
     base_items = Column(VARCHAR(3000), nullable=False)
     book_ids = Column(VARCHAR(1000), nullable=False)
-    buy_nums = Column(VARCHAR(1000), nullable=False)
+    buy_nums = Column(VARCHAR(2000), nullable=False)
     create_time = Column(DateTime, default=datetime.now, nullable=False)
     updated_time = Column(DateTime, default=datetime.now, onupdate=datetime.now)
     deleted = Column(Boolean, default=False)
