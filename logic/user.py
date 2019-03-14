@@ -13,7 +13,7 @@ class WXUserLogic(Logic):
     def __init__(self):
         super(WXUserLogic, self).__init__()
 
-    def input(self, code="", openid="", session_key="", user_name="", recommend_id="",
+    def input(self, code="", openid="", session_key="", user_name="", recommend_id="",platform="",
               stance_items=[], base_items=[], book_ids=[], buy_nums=[]):
         if db_api.wxuser_list(openid=openid):
             raise ParamExist(openid=openid)
@@ -33,6 +33,7 @@ class WXUserLogic(Logic):
             "recommend_id": recommend_id,
             "property_glod": 100, #default
             "property_diamond": 10, #default
+            "platform": platform,#平台
             "stance_items": json.dumps(stance_items),
             "base_items":json.dumps(base_items),
             "book_ids":json.dumps(book_ids),
@@ -53,7 +54,7 @@ class WXUserLogic(Logic):
                         stance_items="",
                         base_items="",
                         book_ids="",
-                        buy_nums=""):
+                        buy_nums="",):
         if not id:
             return
         user_info = db_api.wxuser_get(id)

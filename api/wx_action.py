@@ -41,10 +41,11 @@ class WXActionHandler(RequestHandler):
             LOG.error("Wx action %s error:%s" % (action, ex))
             self.finish(json.dumps({'state': 10, 'message': 'wx action error'}))
 
-    def login(self):
+    def login(self):#//注册或登录
         code = self.get_argument('code', '')
         user_name = self.get_argument('user_name', '')
         recommend_id = self.get_argument('recommend_id', '')
+        platform = self.get_argument('platform', 'wx') #游戏平台
 
         #微信服务器验证
         url = "https://api.weixin.qq.com/sns/jscode2session"
@@ -74,12 +75,14 @@ class WXActionHandler(RequestHandler):
                           session_key=session_key,
                           user_name=user_name,
                           recommend_id=recommend_id,
+                          platform=platform,
                           stance_items=self.stance_items,
                           book_ids=self.book_ids,
-                          buy_nums=self.buy_nums)
+                          buy_nums=self.buy_nums,
+                          )
             self.finish(json.dumps({'state': 0, 'id': _.get("id")}))
 
-    def signin(self):
+    def signin(self):#签到
         id = self.get_argument('id', '')
         _op = SigninLogic()
         _ = _op.user_signin(id)
@@ -95,13 +98,16 @@ class WXActionHandler(RequestHandler):
         stance_items = self.get_argument('stance_items', '{}')
         base_items = self.get_argument('base_items', '[]')
         book_ids = self.get_argument('book_ids', '[]')
+        buy_nums = self.get_argument('buy_nums', '[]')
+
         _op = WXUserLogic()
         _ = _op.update_gamedata(id,
                                 property_glod = property_glod,
                                 property_diamond = property_diamond,
                                 stance_items = stance_items,
                                 base_items=base_items,
-                                book_ids = book_ids,
+                                book_ids=book_ids,
+                                buy_nums=buy_nums,
                                 )
         if _:
             self.finish(json.dumps({'state': 0}))
