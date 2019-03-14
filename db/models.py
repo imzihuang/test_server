@@ -39,6 +39,7 @@ class UserInfo(Base, ModelBase):
     base_items = Column(VARCHAR(3000), nullable=False)
     book_ids = Column(VARCHAR(1000), nullable=False)
     buy_nums = Column(VARCHAR(2000), nullable=False)
+    platform = Column(VARCHAR(100), nullable="wx")#默认微信服务平台
     create_time = Column(DateTime, default=datetime.now, nullable=False)
     updated_time = Column(DateTime, default=datetime.now, onupdate=datetime.now)
     deleted = Column(Boolean, default=False)
