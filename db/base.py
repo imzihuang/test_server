@@ -32,7 +32,8 @@ def _create_facade_lazily():
         if _FACADE is None:
             args = {
                 "encoding": "utf8",
-                "convert_unicode": True
+                "convert_unicode": True,
+                "pool_recycle" : 3600,#该值必须小于数据库服务器的interactive_timeout，连接池中的空闲连接超过1小时候，自动释放。
             }
             _FACADE = EngineFacade(connect, **args)
 
