@@ -31,7 +31,7 @@ class WXUserLogic(Logic):
             "session_key": session_key,
             "user_name": user_name,
             "recommend_id": recommend_id,
-            "property_glod": 100, #default
+            "property_glod": 500, #default
             "property_diamond": 10, #default
             "platform": platform,#平台
             "stance_items": json.dumps(stance_items),
