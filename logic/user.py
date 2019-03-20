@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import datetime
 import time
 from util.exception import ParamExist
 from db import api as db_api
@@ -73,6 +74,7 @@ class WXUserLogic(Logic):
             values.update({"book_ids": book_ids})
         if buy_nums:
             values.update({"buy_nums": buy_nums})
+
         _ = db_api.wxuser_update(user_info.id, values)
         return _
 
@@ -99,6 +101,9 @@ class WXUserLogic(Logic):
 
             buy_nums = view.get("buy_nums",[])
             view.update({"buy_nums": json.loads(buy_nums)})
+
+            offline_time = self.offlineTime(view.get("updated_time", ""))
+            view.update({"offline_time": offline_time})
 
         wx_count = db_api.wxuser_count(**filters)
         return {"count": wx_count,
@@ -132,3 +137,20 @@ class WXUserLogic(Logic):
         if not id:
             return "id is none"
         db_api.wxuser_deleted(id=id)
+
+    def offlineTime(self, lastDate):
+        """
+        计算离线时间（单位秒）
+        :param lastDate: 上一个日期，取用户的updated_time
+        :return:
+        """
+        if(lastDate==""):
+            return 0
+        timeArray = time.strptime(lastDate, "%Y-%m-%d %H:%M:%S")
+        oldTime = int(time.mktime(timeArray)) #上一次更新的时间戳
+        currentTime = time.time() #当前时间戳
+        return  currentTime - oldTime
+
+
+
+
