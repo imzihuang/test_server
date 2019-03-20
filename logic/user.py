@@ -149,7 +149,7 @@ class WXUserLogic(Logic):
         timeArray = time.strptime(lastDate, "%Y-%m-%d %H:%M:%S")
         oldTime = int(time.mktime(timeArray)) #上一次更新的时间戳
         currentTime = time.time() #当前时间戳
-        return  currentTime - oldTime
+        return  int(currentTime - oldTime)
 
 
 
