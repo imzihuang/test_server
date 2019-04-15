@@ -71,7 +71,7 @@ class WXActionHandler(RequestHandler):
         if exit_app:
             _op.update(exit_app.get("id"), session_key=session_key)
             token = common_util.gen_token(exit_app.get("id"), 0)
-            self.finish(json.dumps({'state': 0, 'id': exit_app.get("id")}))
+            self.finish(json.dumps({'state': 0, 'id': exit_app.get("id"), 'token': token}))
         else:
             _ = _op.input(code=code,
                           openid=openid,
@@ -84,7 +84,7 @@ class WXActionHandler(RequestHandler):
                           buy_nums=self.buy_nums,
                           )
             token = common_util.gen_token(_.get("id"), 0)
-            self.finish(json.dumps({'state': 0, 'id': _.get("id")}))
+            self.finish(json.dumps({'state': 0, 'id': _.get("id"), 'token': token}))
 
     @verify_token
     def signin(self, user_id):#签到
@@ -99,6 +99,7 @@ class WXActionHandler(RequestHandler):
     @verify_token
     def update_gamedata(self, user_id):
         #id = self.get_argument('id', '')
+        #LOG.info("user id:"+user_id)
         property_glod = int(self.get_argument('property_glod', 0))
         property_diamond = int(self.get_argument('property_diamond', 0))
         stance_items = self.get_argument('stance_items', '{}')
