@@ -6,6 +6,8 @@ from six.moves.urllib import parse
 from util.exception import ParamExist
 import logging
 import json
+from api.base import verify_token
+from util import common_util
 from logic.user import WXUserLogic
 from logic.signin import SigninLogic
 from logic.share import ShareLogic
@@ -68,6 +70,7 @@ class WXActionHandler(RequestHandler):
         exit_app = _op.info_by_openid(openid=openid)
         if exit_app:
             _op.update(exit_app.get("id"), session_key=session_key)
+            token = common_util.gen_token(exit_app.get("id"), 0)
             self.finish(json.dumps({'state': 0, 'id': exit_app.get("id")}))
         else:
             _ = _op.input(code=code,
@@ -80,19 +83,22 @@ class WXActionHandler(RequestHandler):
                           book_ids=self.book_ids,
                           buy_nums=self.buy_nums,
                           )
+            token = common_util.gen_token(_.get("id"), 0)
             self.finish(json.dumps({'state': 0, 'id': _.get("id")}))
 
-    def signin(self):#签到
-        id = self.get_argument('id', '')
+    @verify_token
+    def signin(self, user_id):#签到
+        #id = self.get_argument('id', '')
         _op = SigninLogic()
-        _ = _op.user_signin(id)
+        _ = _op.user_signin(user_id)
         if _:
             self.finish(json.dumps({'state': 0}))
         else:
             self.finish(json.dumps({'state': 1}))
 
-    def update_gamedata(self):
-        id = self.get_argument('id', '')
+    @verify_token
+    def update_gamedata(self, user_id):
+        #id = self.get_argument('id', '')
         property_glod = int(self.get_argument('property_glod', 0))
         property_diamond = int(self.get_argument('property_diamond', 0))
         stance_items = self.get_argument('stance_items', '{}')
@@ -101,7 +107,7 @@ class WXActionHandler(RequestHandler):
         buy_nums = self.get_argument('buy_nums', '[]')
 
         _op = WXUserLogic()
-        _ = _op.update_gamedata(id,
+        _ = _op.update_gamedata(user_id,
                                 property_glod = property_glod,
                                 property_diamond = property_diamond,
                                 stance_items = stance_items,
@@ -114,8 +120,9 @@ class WXActionHandler(RequestHandler):
         else:
             self.finish(json.dumps({'state': 1}))
 
-    def share(self):
-        id = self.get_argument('id', '')
+    @verify_token
+    def share(self, user_id):
+        #id = self.get_argument('id', '')
         _op = ShareLogic()
         _ = _op.user_share(id)
         if _:

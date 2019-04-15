@@ -133,6 +133,13 @@ class WXUserLogic(Logic):
         wx_count = db_api.wxuser_count(recommend_id=user_info.id)
         return {"count": wx_count, "state": 0, "message": "query success", "data": self.views(wx_list)}
 
+    def info(self, id):
+        if not id:
+            return
+        wx_info = db_api.wxuser_get(id)
+        if wx_info:
+            return self.views(wx_info)
+
     def delete(self, id="", **kwargs):
         if not id:
             return "id is none"

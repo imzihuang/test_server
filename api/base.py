@@ -1,0 +1,24 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+import time
+from util import common_util
+from logic.user import WXUserLogic
+
+def verify_token(func):
+    """
+    :param func:
+    :return:
+    """
+    def __(torn_self):
+        token = torn_self.get_argument('token', '')
+        user_id, dtime = common_util.dgen_token(token)
+        if time != 0 and int(time.time()) - dtime > 3600 * 5:  # 5小时内有效
+            torn_self.finish({'state': 1, 'message': 'token error'})
+            return
+        user_op = WXUserLogic()
+        user_info = user_op.info(user_id)
+        if not user_info:
+            torn_self.finish({'state': 8, 'message': 'token user error'})
+            return
+        func(torn_self, user_id)
+    return __
