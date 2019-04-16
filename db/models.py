@@ -28,9 +28,6 @@ def _to_dict(model_obj):
 class UserInfo(Base, ModelBase):
     __tablename__ = 'user_info'
     id = Column(VARCHAR(36), primary_key=True)
-    openid = Column(VARCHAR(50))
-    code = Column(VARCHAR(36))
-    session_key = Column(VARCHAR(50))
     user_name = Column(VARCHAR(50))
     recommend_id = Column(VARCHAR(36))
     property_glod = Column(Float, default=0)
