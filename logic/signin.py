@@ -2,33 +2,35 @@
 # -*- coding: utf-8 -*-
 
 import datetime
-from util.exception import ParamExist
-from db import api as db_api
-from logic import Logic
+from logic import Base
 import logging
+from db.example.signin import SigninDB
+from db.example.user import UserDB
 
 LOG = logging.getLogger(__name__)
 
-class SigninLogic(Logic):
+class SigninLogic(Base):
     def __init__(self):
+        self.exampledb = SigninDB()
         super(SigninLogic, self).__init__()
 
     def user_signin(self, id):
         if not id:
             return False
-        user_info = db_api.wxuser_get(id)
+        userdb = UserDB()
+        user_info = userdb.info(id)
         if not user_info:
             return False
-        sign_info = db_api.signin_get_userid(user_info.id)
+        sign_info = self.exampledb.info_userid(user_info.id)
         if not sign_info:
-            db_api.signin_create({
+            self.create(**{
                 "user_id": user_info.id,
                 "continuous": 1,
                 "lastdate": datetime.date.today()
             })
         else:
             continuous = sign_info.continuous+1 if sign_info.continuous<7 else 1
-            db_api.signin_update(sign_info.id, {
+            self.update(sign_info.id, **{
                 "continuous": continuous,
                 "lastdate": datetime.date.today()
             })
@@ -38,10 +40,11 @@ class SigninLogic(Logic):
     def sign_status(self, id):
         if not id:
             return -1
-        user_info = db_api.wxuser_get(id)
+        userdb = UserDB()
+        user_info = userdb.info(id)
         if not user_info:
             return -1
-        sign_info = db_api.signin_get_userid(user_info.id)
+        sign_info = self.exampledb.info_userid(user_info.id)
         if(sign_info.lastdate == datetime.date.today()):
             #今日签到过
             return sign_info.continuous

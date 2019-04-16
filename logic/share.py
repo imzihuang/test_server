@@ -2,38 +2,40 @@
 # -*- coding: utf-8 -*-
 
 import datetime
-from util.exception import ParamExist
-from db import api as db_api
-from logic import Logic
+from logic import Base
 import logging
+from db.example.share import ShareDB
+from db.example.user import UserDB
 
 LOG = logging.getLogger(__name__)
 
-class ShareLogic(Logic):
+class ShareLogic(Base):
     def __init__(self):
+        self.exampledb = ShareDB()
         super(ShareLogic, self).__init__()
 
     def user_share(self, id):
         if not id:
             return False
-        user_info = db_api.wxuser_get(id)
+        userdb = UserDB()
+        user_info = userdb.info(id)
         if not user_info:
             return False
-        share_info = db_api.share_get_userid(user_info.id)
+        share_info = self.exampledb.info_userid(user_info.id)
         if not share_info:
-            db_api.share_create({
-                "user_id": user_info.id,
-                "share_num": 1,
-                "lastdate": datetime.date.today()
-            })
+            self.create(
+                user_id=user_info.id,
+                share_num= 1,
+                lastdate= datetime.date.today()
+            )
         else:
             if(share_info.lastdate!=datetime.date.today()):
-                db_api.share_update(share_info.id, {
+                self.update(share_info.id, **{
                     "share_num": 1,
                     "lastdate": datetime.date.today()
                 })
             else:
-                db_api.share_update(share_info.id, {
+                self.update(share_info.id, **{
                     "share_num": share_info.share_num+1,
                     "lastdate": datetime.date.today()
                 })
@@ -43,10 +45,11 @@ class ShareLogic(Logic):
     def get_share_num(self, user_id):
         if not user_id:
             return -1
-        user_info = db_api.wxuser_get(user_id)
+        userdb = UserDB()
+        user_info = userdb.info(id)
         if not user_info:
             return -1
-        share_info = db_api.share_get_userid(user_info.id)
+        share_info = self.exampledb.info_userid(user_info.id)
         if not share_info:
             return 0
         if(share_info.lastdate == datetime.date.today()):

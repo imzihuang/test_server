@@ -123,7 +123,6 @@ class WXActionHandler(RequestHandler):
 
     @verify_token
     def share(self, user_id):
-        #id = self.get_argument('id', '')
         _op = ShareLogic()
         _ = _op.user_share(id)
         if _:

@@ -2,6 +2,7 @@
 
 from tornado.web import StaticFileHandler
 from api import infos, wx_action
+from api import wx_account, account
 from settings import default_settings
 
 def _handlers():
@@ -9,8 +10,11 @@ def _handlers():
     if prefix[-1] != '/':
         prefix += '/'
     return [
-        (r'/(?P<infos_obj>.+)/infos$', infos.InfosHandler),
-        (r'/(?P<action>.+)/wx_action$', wx_action.WXActionHandler, default_settings),
+        (r'/wx_user/login$', wx_account.LoginHandler, default_settings),
+        (r'/game/user', account.UserHandler),
+        (r'/game/share', account.ShareHandler),
+        (r'/game/signin', account.SigninHandler),
+
         (prefix + r'(.*\.(css|png|js))', StaticFileHandler,
          {'path': default_settings.get('static_path')}),
     ]

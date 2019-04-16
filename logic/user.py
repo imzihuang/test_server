@@ -1,35 +1,21 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import datetime
 import time
-from util.exception import ParamExist
-from db import api as db_api
-from logic import Logic
+from logic import Base
 import logging
 import json
+from db.example.user import UserDB
 LOG = logging.getLogger(__name__)
 
-class WXUserLogic(Logic):
+class WXUserLogic(Base):
     def __init__(self):
+        self.exampledb = UserDB()
         super(WXUserLogic, self).__init__()
 
-    def input(self, code="", openid="", session_key="", user_name="", recommend_id="",platform="",
+    def create(self, user_name="", recommend_id="",platform="",
               stance_items=[], base_items=[], book_ids=[], buy_nums=[]):
-        if db_api.wxuser_list(openid=openid):
-            raise ParamExist(openid=openid)
-
-        if db_api.wxuser_list(session_key=session_key):
-            raise ParamExist(session_key=session_key)
-
-        #简单兼容
-        if recommend_id and not db_api.wxuser_get(recommend_id):
-            recommend_id = ""
-
         values = {
-            "code": code,
-            "openid": openid,
-            "session_key": session_key,
             "user_name": user_name,
             "recommend_id": recommend_id,
             "property_glod": 2000, #default
@@ -41,14 +27,8 @@ class WXUserLogic(Logic):
             "buy_nums":json.dumps(buy_nums)
         }
 
-        wx_obj = db_api.wxuser_create(values)
+        wx_obj = self.exampledb.create(**values)
         return wx_obj
-
-    def update(self, id="", **kwargs):
-        if not id or not kwargs:
-            return False
-        _ = db_api.wxuser_update(id, kwargs)
-        return _
 
     def update_gamedata(self, id, property_glod=0,
                         property_diamond=0,
@@ -58,7 +38,7 @@ class WXUserLogic(Logic):
                         buy_nums="",):
         if not id:
             return
-        user_info = db_api.wxuser_get(id)
+        user_info = self.exampledb.info(id)
         if not user_info:
             return
         values = dict()
@@ -75,7 +55,7 @@ class WXUserLogic(Logic):
         if buy_nums:
             values.update({"buy_nums": buy_nums})
 
-        _ = db_api.wxuser_update(user_info.id, values)
+        _ = self.exampledb.update(user_info.id, **values)
         return _
 
 
@@ -86,7 +66,7 @@ class WXUserLogic(Logic):
             filters.update({"user_name": user_name})
         if id:
             filters.update({"id": id})
-        wx_list = db_api.wxuser_list(offset=offset, limit=limit, **filters)
+        wx_list = self.lists(offset=offset, limit=limit, **filters)
         #获取所拥有的怪物信息 monsterdata
         views_list = self.views(wx_list)
         for view in views_list:
@@ -105,45 +85,13 @@ class WXUserLogic(Logic):
             offline_time = self.offlineTime(view.get("updated_time", ""))
             view.update({"offline_time": offline_time})
 
-        wx_count = db_api.wxuser_count(**filters)
-        return {"count": wx_count,
+        count = self.exampledb.counts(**filters)
+        return {"count": count,
                 "state": 0,
                 "message": "query success",
                 "data": views_list,
                 "current_time": time.time()*1000#单位毫秒
                 }
-
-
-    def info_by_openid(self, openid):
-        if not openid:
-            return
-        wx_infos = db_api.wxuser_list(openid=openid)
-        if wx_infos:
-            return self.views(wx_infos[0])
-
-    def info_recommend(self, id, limit=100, offset=1):
-        """
-        获取推荐人
-        :param session_key:
-        :return:
-        """
-        if not id:
-            return
-        wx_list = db_api.wxuser_list(offset=offset, limit=limit, recommend_id=id)
-        wx_count = db_api.wxuser_count(recommend_id=user_info.id)
-        return {"count": wx_count, "state": 0, "message": "query success", "data": self.views(wx_list)}
-
-    def info(self, id):
-        if not id:
-            return
-        wx_info = db_api.wxuser_get(id)
-        if wx_info:
-            return self.views(wx_info)
-
-    def delete(self, id="", **kwargs):
-        if not id:
-            return "id is none"
-        db_api.wxuser_deleted(id=id)
 
     def offlineTime(self, lastDate):
         """

@@ -1,21 +1,28 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+from db.example import Base as BaseDB
 
-class Logic(object):
+class Base(object):
     def __init__(self):
-        pass
+        self.exampledb = BaseDB()
 
-    def input(self, *args, **kwargs):
-        return True
+    def create(self,  **kwargs):
+        return self.exampledb.create(**kwargs)
+
+    def batch_create(self, lists, **kwargs):
+        self.exampledb.batch_create(lists)
 
     def update(self, id="", **kwargs):
-        return True
+        return self.exampledb.update(id, **kwargs)
 
-    def infos(self, *args, **kwargs):
-        return {}
+    def info(self, id=""):
+        return self.exampledb.info(id)
 
-    def delete(self, id="", **kwargs):
-        return True
+    def lists(self, offset=0, limit=1000, **kwargs):
+        return self.exampledb.lists(offset, limit, **kwargs)
+
+    def delete(self, id=""):
+        self.exampledb.delete(id)
 
     def views(self, models):
         if not models:
