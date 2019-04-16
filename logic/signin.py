@@ -12,7 +12,6 @@ LOG = logging.getLogger(__name__)
 class SigninLogic(Base):
     def __init__(self):
         self.exampledb = SigninDB()
-        super(SigninLogic, self).__init__()
 
     def user_signin(self, id):
         if not id:

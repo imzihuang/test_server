@@ -13,7 +13,6 @@ LOG = logging.getLogger(__name__)
 class WXUserLogic(Base):
     def __init__(self):
         self.exampledb = WxUserDB()
-        super(WXUserLogic, self).__init__()
 
     def create(self, code="", openid="", session_key="", wx_name="", recommend_id="",platform="",
               stance_items=[], base_items=[], book_ids=[], buy_nums=[]):

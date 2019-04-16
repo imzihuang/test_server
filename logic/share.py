@@ -12,7 +12,6 @@ LOG = logging.getLogger(__name__)
 class ShareLogic(Base):
     def __init__(self):
         self.exampledb = ShareDB()
-        super(ShareLogic, self).__init__()
 
     def user_share(self, id):
         if not id:
