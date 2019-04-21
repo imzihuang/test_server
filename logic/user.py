@@ -40,7 +40,7 @@ class WXUserLogic(Base):
         user_info = self.exampledb.info(id)
         if not user_info:
             return
-        if len(user_info.book_ids)< len(book_ids.length):
+        if len(user_info.book_ids)>len(book_ids) and user_info.property_glod>property_glod:
             #防止错误信息，如没有获取数据，但认证成功了，向后台写入数据
             return
         values = dict()
