@@ -13,11 +13,11 @@ class AdvertisingLogic(Base):
     def __init__(self):
         self.exampledb = AdvertisingDB()
 
-    def user_advertising(self, id):
-        if not id:
+    def user_advertising(self, user_id):
+        if not user_id:
             return False
         userdb = UserDB()
-        user_info = userdb.info(id)
+        user_info = userdb.info(user_id)
         if not user_info:
             return False
         advertising_info = self.exampledb.info_userid(user_info.id)
@@ -45,7 +45,7 @@ class AdvertisingLogic(Base):
         if not user_id:
             return -1
         userdb = UserDB()
-        user_info = userdb.info(id)
+        user_info = userdb.info(user_id)
         if not user_info:
             return -1
         advertising_info = self.exampledb.info_userid(user_info.id)
