@@ -33,7 +33,7 @@ class Base(object):
 
     def counts(self, **kwargs):
         if self.model==None:
-            return
+            return 0
         return api.model_count(self.model, **kwargs)
 
     def delete(self, id=""):

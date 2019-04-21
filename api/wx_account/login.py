@@ -50,7 +50,7 @@ class LoginHandler(RequestHandler):
         if exit_app and exit_app.get("session_key") != session_key:
             _op.update(exit_app.get("id"), session_key=session_key)
             token = common_util.gen_token(exit_app.get("user_id"), 0)
-            self.finish(json.dumps({'state': 0, 'id': exit_app.get("id"), 'token': token}))
+            self.finish(json.dumps({'state': 0, 'id': exit_app.get("user_id"), 'token': token}))
         else:
             _ = _op.create(code=code,
                           openid=openid,
@@ -63,6 +63,6 @@ class LoginHandler(RequestHandler):
                           buy_nums=self.buy_nums,
                           )
             token = common_util.gen_token(_.get("user_id"), 0)
-            self.finish(json.dumps({'state': 0, 'id': _.get("id"), 'token': token}))
+            self.finish(json.dumps({'state': 0, 'id': _.get("user_id"), 'token': token}))
 
 
