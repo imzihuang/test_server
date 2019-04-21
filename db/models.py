@@ -63,7 +63,7 @@ class WxUserinfo(Base, ModelBase):
 class SignIn(Base, ModelBase):
     __tablename__ = 'signin'
     id = Column(VARCHAR(36), primary_key=True)
-    user_id = Column(VARCHAR(36), primary_key=True)
+    user_id = Column(VARCHAR(36))
     continuous = Column(Integer, default=0)
     lastdate = Column(Date, nullable=False)
     deleted = Column(Boolean, default=False)
@@ -75,7 +75,7 @@ class SignIn(Base, ModelBase):
 class Share(Base, ModelBase):
     __tablename__ = 'share'
     id = Column(VARCHAR(36), primary_key=True)
-    user_id = Column(VARCHAR(36), primary_key=True)
+    user_id = Column(VARCHAR(36))
     share_num = Column(Integer, default=0)
     lastdate = Column(Date, nullable=False)
     deleted = Column(Boolean, default=False)
@@ -86,7 +86,7 @@ class Share(Base, ModelBase):
 class Advertising(Base, ModelBase):
     __tablename__ = 'advertising'
     id = Column(VARCHAR(36), primary_key=True)
-    user_id = Column(VARCHAR(36), primary_key=True)
+    user_id = Column(VARCHAR(36))
     advertising_num = Column(Integer, default=0)
     lastdate = Column(Date, nullable=False)
     deleted = Column(Boolean, default=False)
