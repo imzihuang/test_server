@@ -83,6 +83,17 @@ class Share(Base, ModelBase):
     def to_dict(self):
         return _to_dict(self)
 
+class Advertising(Base, ModelBase):
+    __tablename__ = 'advertising'
+    id = Column(VARCHAR(36), primary_key=True)
+    user_id = Column(VARCHAR(36), primary_key=True)
+    advertising_num = Column(Integer, default=0)
+    lastdate = Column(Date, nullable=False)
+    deleted = Column(Boolean, default=False)
+
+    def to_dict(self):
+        return _to_dict(self)
+
 def register_db():
     engine = get_engine()
     Base.metadata.create_all(engine)

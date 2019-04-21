@@ -14,6 +14,7 @@ def _handlers():
         (r'/game/user', account.UserHandler),
         (r'/game/share', account.ShareHandler),
         (r'/game/signin', account.SigninHandler),
+        (r'/game/advertising', account.AdvertisingHandler),
 
         (prefix + r'(.*\.(css|png|js))', StaticFileHandler,
          {'path': default_settings.get('static_path')}),
