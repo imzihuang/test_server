@@ -16,11 +16,13 @@ class UserHandler(RequestHandler):
         limit = int(self.get_argument('limit', 100))
         offset = int(self.get_argument('offset', 0))
         user_name = self.get_argument('user_name', '')
+        recommend_id = self.get_argument('recommend_id', '')
         id = self.get_argument('id', '')
         _op = WXUserLogic()
         _value = {
             "user_name": user_name,
-            "id": id
+            "id": id,
+            "recommend_id": recommend_id
         }
         _ = _op.infos(limit=limit, offset=offset, **_value)
         if _:
