@@ -17,10 +17,11 @@ game_dic_con = _conf.get_fields('game_wx')
 LOG = logging.getLogger(__name__)
 
 class LoginHandler(RequestHandler):
-    def initialize(self, book_ids, stance_items, buy_nums, **kwds):
+    def initialize(self, book_ids, stance_items, buy_nums, skill_items, **kwds):
         self.book_ids = book_ids
         self.stance_items = stance_items
         self.buy_nums = buy_nums
+        self.skill_items = skill_items
 
     def post(self):
         code = self.get_argument('code', '')
@@ -53,14 +54,15 @@ class LoginHandler(RequestHandler):
             self.finish(json.dumps({'state': 0, 'id': exit_app.get("user_id"), 'token': token}))
         else:
             _ = _op.create(code=code,
-                          openid=openid,
-                          session_key=session_key,
-                          wx_name=user_name,
-                          recommend_id=recommend_id,
-                          platform=platform,
-                          stance_items=self.stance_items,
-                          book_ids=self.book_ids,
-                          buy_nums=self.buy_nums,
+                           openid=openid,
+                           session_key=session_key,
+                           wx_name=user_name,
+                           recommend_id=recommend_id,
+                           platform=platform,
+                           stance_items=self.stance_items,
+                           book_ids=self.book_ids,
+                           buy_nums=self.buy_nums,
+                           skill_items = self.skill_items
                           )
             token = common_util.gen_token(_.get("user_id"), 0)
             self.finish(json.dumps({'state': 0, 'id': _.get("user_id"), 'token': token}))

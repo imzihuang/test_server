@@ -8,12 +8,12 @@ import json
 from db.example.user import UserDB
 LOG = logging.getLogger(__name__)
 
-class WXUserLogic(Base):
+class UserLogic(Base):
     def __init__(self):
         self.exampledb = UserDB()
 
     def create(self, user_name="", recommend_id="",platform="",
-              stance_items=[], base_items=[], book_ids=[], buy_nums=[]):
+              stance_items=[], base_items=[], book_ids=[], buy_nums=[], skill_items=[]):
         values = {
             "user_name": user_name,
             "recommend_id": recommend_id,
@@ -23,7 +23,8 @@ class WXUserLogic(Base):
             "stance_items": json.dumps(stance_items),
             "base_items":json.dumps(base_items),
             "book_ids":json.dumps(book_ids),
-            "buy_nums":json.dumps(buy_nums)
+            "buy_nums":json.dumps(buy_nums),
+            "skill_items": json.dumps(skill_items),
         }
 
         wx_obj = self.exampledb.create(**values)
@@ -34,7 +35,8 @@ class WXUserLogic(Base):
                         stance_items="",
                         base_items="",
                         book_ids="",
-                        buy_nums="",):
+                        buy_nums="",
+                        skill_items=""):
         if not id:
             return
         user_info = self.exampledb.info(id)
@@ -56,6 +58,8 @@ class WXUserLogic(Base):
             values.update({"book_ids": book_ids})
         if buy_nums:
             values.update({"buy_nums": buy_nums})
+        if skill_items:
+            values.update({"skill_items": skill_items})
 
         _ = self.exampledb.update(user_info.id, **values)
         return _
@@ -85,6 +89,9 @@ class WXUserLogic(Base):
 
             buy_nums = view.get("buy_nums",[])
             view.update({"buy_nums": json.loads(buy_nums)})
+
+            skill_items = view.get("skill_items", [])
+            view.update({"skill_items": json.loads(skill_items)})
 
             offline_time = self.offlineTime(view.get("updated_time", ""))
             view.update({"offline_time": offline_time})

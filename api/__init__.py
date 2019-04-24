@@ -1,7 +1,6 @@
 #coding:utf-8
 
 from tornado.web import StaticFileHandler
-from api import infos, wx_action
 from api import wx_account, account
 from settings import default_settings
 

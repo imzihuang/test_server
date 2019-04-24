@@ -15,7 +15,7 @@ class WXUserLogic(Base):
         self.exampledb = WxUserDB()
 
     def create(self, code="", openid="", session_key="", wx_name="", recommend_id="",platform="",
-              stance_items=[], base_items=[], book_ids=[], buy_nums=[]):
+              stance_items=[], base_items=[], book_ids=[], buy_nums=[], skill_items=[]):
         if self.lists(openid=openid):
             raise ParamExist(openid=openid)
 
@@ -43,7 +43,8 @@ class WXUserLogic(Base):
             "stance_items": json.dumps(stance_items),
             "base_items":json.dumps(base_items),
             "book_ids":json.dumps(book_ids),
-            "buy_nums":json.dumps(buy_nums)
+            "buy_nums":json.dumps(buy_nums),
+            "skill_items": json.dumps(skill_items)
         }
 
         userdb = UserDB()

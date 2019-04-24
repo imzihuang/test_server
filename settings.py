@@ -20,6 +20,7 @@ default_settings = {
     'book_ids': ["0101"],
     'stance_items': [{"m_id": "0101", 'lvl':1, "index":1}],
     'buy_nums':[],#[{"id":"0101", "g":1, "d":1}] 购买一次
+    'skill_items':[]#技能位[{"m_id": "0101", 'lvl':1, "index":1}]
 }
 
 models = []

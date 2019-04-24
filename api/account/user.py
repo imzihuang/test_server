@@ -4,7 +4,7 @@ from tornado.web import RequestHandler
 import logging
 import json
 from api.base import verify_token
-from logic.user import WXUserLogic
+from logic.user import UserLogic
 
 LOG = logging.getLogger(__name__)
 
@@ -18,7 +18,7 @@ class UserHandler(RequestHandler):
         user_name = self.get_argument('user_name', '')
         recommend_id = self.get_argument('recommend_id', '')
         id = self.get_argument('id', '')
-        _op = WXUserLogic()
+        _op = UserLogic()
         _value = {
             "user_name": user_name,
             "id": id,
@@ -38,8 +38,9 @@ class UserHandler(RequestHandler):
         base_items = self.get_argument('base_items', '[]')
         book_ids = self.get_argument('book_ids', '[]')
         buy_nums = self.get_argument('buy_nums', '[]')
+        skill_items = self.get_argument('skill_items', [])
 
-        _op = WXUserLogic()
+        _op = UserLogic()
         _ = _op.update_gamedata(user_id,
                                 property_glod=property_glod,
                                 property_diamond=property_diamond,
@@ -47,6 +48,7 @@ class UserHandler(RequestHandler):
                                 base_items=base_items,
                                 book_ids=book_ids,
                                 buy_nums=buy_nums,
+                                skill_items = skill_items,
                                 )
         if _:
             self.finish(json.dumps({'state': 0}))
