@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 import time
 from util import common_util, convert
-from logic.user import WXUserLogic
+from logic.user import UserLogic
 import logging
 LOG = logging.getLogger(__name__)
 def verify_token(func):
@@ -18,7 +18,7 @@ def verify_token(func):
         if dtime != 0 and int(time.time()) - dtime > 3600 * 5:  # 5小时内有效
             torn_self.finish({'state': 1, 'message': 'token error'})
             return
-        user_op = WXUserLogic()
+        user_op = UserLogic()
         user_info = user_op.info(user_id)
         if not user_info:
             torn_self.finish({'state': 8, 'message': 'token user error'})
