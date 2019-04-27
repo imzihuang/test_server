@@ -36,7 +36,7 @@ class StorageHandler(RequestHandler):
         http_client = tornado.httpclient.HTTPClient()
         url = "https://api.weixin.qq.com/wxa/set_user_storage"
         response = http_client.fetch("%s?%s" % (url, parse.urlencode(params)), method='POST', body=body_params)
-        self.finish(json.dumps({'state': 0, response.body}))
+        self.finish(json.dumps({'state': 0, "body":response.body}))
 
     def login(self, code):
         # 微信服务器验证
