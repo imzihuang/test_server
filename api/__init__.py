@@ -10,6 +10,7 @@ def _handlers():
         prefix += '/'
     return [
         (r'/wx_user/login$', wx_account.LoginHandler, default_settings),
+        (r'/wx_user/storage$', wx_account.StorageHandler),
         (r'/game/user', account.UserHandler),
         (r'/game/share', account.ShareHandler),
         (r'/game/signin', account.SigninHandler),

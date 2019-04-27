@@ -58,3 +58,10 @@ class WXUserLogic(Base):
         wx_infos = self.lists(openid=openid)
         if wx_infos:
             return self.views(wx_infos[0])
+
+    def info_by_userid(self, user_id):
+        if not user_id:
+            return
+        wx_infos = self.lists(openid=user_id)
+        if wx_infos:
+            return self.views(wx_infos[0])
