@@ -48,8 +48,9 @@ class LoginHandler(RequestHandler):
         # 存储openid和session_key,并返回识别session串
         _op = WXUserLogic()
         exit_app = _op.info_by_openid(openid=openid)
-        if exit_app and exit_app.get("session_key") != session_key:
-            _op.update(exit_app.get("id"), session_key=session_key)
+        if exit_app:
+            if(exit_app.get("session_key") != session_key):
+                _op.update(exit_app.get("id"), session_key=session_key)
             token = common_util.gen_token(exit_app.get("user_id"), 0)
             self.finish(json.dumps({'state': 0, 'id': exit_app.get("user_id"), 'token': token}))
         else:
