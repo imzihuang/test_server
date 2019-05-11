@@ -28,7 +28,7 @@ class ChapterLogic(Base):
         chapter_info = self.exampledb.info_userid(user_info.id)
         if not chapter_info:
             return 0
-        return chapter_info.share_num
+        return chapter_info.chapter_num
 
     def update_by_user(self, user_id, chapter_num=0):
         if not user_id:
