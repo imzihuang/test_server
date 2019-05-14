@@ -22,10 +22,12 @@ class StorageHandler(RequestHandler):
         wx_op = WXUserLogic()
         wx_userinfo = wx_op.info_by_userid(user_id=user_id)
         code = wx_userinfo.get("code")
-        _ = self.login(code)
-        openid, session_key = _
+        #_ = self.login(code)
+        #openid, session_key = _
+        openid = wx_userinfo.get("openid")
+        session_key = wx_userinfo.get("session_key")
         access_token = self.get_token()
-        body_params = '{ "kv_list":[{"key":"maxScore","value":"'+maxScore+'"}] }'
+        body_params = '{ "kv_list":[{"key":"maxScore","value":"'+maxScore+'"}, {"key": "score", "value": "0"}] }'
         signature = get_sign(body_params, session_key)
         params = {
             "access_token": access_token,
@@ -33,6 +35,7 @@ class StorageHandler(RequestHandler):
             "signature": signature,
             "sig_method": "hmac_sha256",
         }
+        LOG.info(params)
         http_client = tornado.httpclient.HTTPClient()
         url = "https://api.weixin.qq.com/wxa/set_user_storage"
         response = http_client.fetch("%s?%s" % (url, parse.urlencode(params)), method='POST', body=body_params)
@@ -51,13 +54,14 @@ class StorageHandler(RequestHandler):
         }
         http_client = tornado.httpclient.HTTPClient()
         response = http_client.fetch("%s?%s" % (url, parse.urlencode(params)))
+        LOG.info(response)
         dic_body = json.loads(response.body)
         openid = dic_body.get('openid')
         session_key = dic_body.get('session_key')
         return openid, session_key
 
     def get_token(self):
-        token_url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential"#&appid=APPID&secret=APPSECRET"
+        token_url = "https://api.weixin.qq.com/cgi-bin/token"#&appid=APPID&secret=APPSECRET"
         app_id = game_dic_con.get("appid")
         secret = game_dic_con.get("secret")
         params = {
