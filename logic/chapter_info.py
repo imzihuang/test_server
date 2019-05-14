@@ -67,8 +67,9 @@ class ChapterInfoLogic(Base):
             return _
         else:
             #新增，先判断index是否连续
-            judge_chapter_info = self.exampledb.info_by_index(chapter_index -1)
-            if not judge_chapter_info: #index不连续
-                return
+            if chapter_index>1:
+                judge_chapter_info = self.exampledb.info_by_index(chapter_index-1)
+                if not judge_chapter_info: #index不连续
+                    return
             _ = self.exampledb.create(**values)
             return _
