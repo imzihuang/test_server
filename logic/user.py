@@ -75,7 +75,6 @@ class UserLogic(Base):
         if recommend_id:
             filters.update({"recommend_id": recommend_id})
         wx_list = self.lists(offset=offset, limit=limit, **filters)
-        #获取所拥有的怪物信息 monsterdata
         views_list = self.views(wx_list)
         for view in views_list:
             stance_items = view.get("stance_items", [])

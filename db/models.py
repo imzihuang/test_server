@@ -107,6 +107,21 @@ class Chapter(Base, ModelBase):
     def to_dict(self):
         return _to_dict(self)
 
+class ChapterInfo(Base, ModelBase):
+    __tablename__ = 'chapter_info'
+    id = Column(VARCHAR(36), primary_key=True)
+    index = Column(Integer, default=0)
+    boss = Column(VARCHAR(200))
+    ball_num = Column(Integer, default=0)
+    barrier_indexs = Column(VARCHAR(200))
+    barrier_nums = Column(VARCHAR(200))
+    barrier_types = Column(VARCHAR(200))
+    barrier_offset = Column(VARCHAR(200))
+    create_time = Column(DateTime, default=datetime.now, nullable=False)
+    updated_time = Column(DateTime, default=datetime.now, onupdate=datetime.now)
+
+    def to_dict(self):
+        return _to_dict(self)
 
 def register_db():
     engine = get_engine()

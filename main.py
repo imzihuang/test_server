@@ -18,13 +18,13 @@ if settings.default_settings.get("log_info", ""):
                         format='%(asctime)s  %(filename)s : %(levelname)s  %(message)s',
                         filename=settings.default_settings.get("log_info", ""),
                         datefmt='%Y-%m-%d %A %H:%M:%S', )
-
+"""
 if settings.default_settings.get("log_error", ""):
     logging.basicConfig(level=logging.ERROR,
                         format='%(asctime)s  %(filename)s : %(levelname)s  %(message)s',
                         filename=settings.default_settings.get("log_error", ""),
                         datefmt='%Y-%m-%d %A %H:%M:%S', )
-
+"""
 
 class My_Application(Application):
     def __init__(self, handlers=None, default_host="", **settings):
