@@ -9,7 +9,7 @@ class ChapterInfoDB(Base):
 
     def info_by_index(self, index):
         query = api.model_query(self.model)
-        result = query.filter_by(index=index).first()
+        result = query.filter_by(chapter_index =index).first()
         if not result:
             return None
         return result

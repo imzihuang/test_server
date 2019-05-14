@@ -110,7 +110,7 @@ class Chapter(Base, ModelBase):
 class ChapterInfo(Base, ModelBase):
     __tablename__ = 'chapter_info'
     id = Column(VARCHAR(36), primary_key=True)
-    index = Column(Integer, default=0)
+    chapter_index = Column(Integer, default=0)
     boss = Column(VARCHAR(200))
     ball_num = Column(Integer, default=0)
     barrier_indexs = Column(VARCHAR(200))

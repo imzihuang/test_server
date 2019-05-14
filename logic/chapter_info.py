@@ -37,18 +37,18 @@ class ChapterInfoLogic(Base):
                 "data": views_list,
                 }
 
-    def manage_info(self, index=0,
+    def manage_info(self, chapter_index =0,
                     boss='[]',
                     ball_num=1,
                     barrier_indexs='[]',
                     barrier_nums='[]',
                     barrier_types='[]',
                     barrier_offset='[]'):
-        if index==0:
+        if chapter_index==0:
             return
-        chapter_info = self.exampledb.info_by_index(index)
+        chapter_info = self.exampledb.info_by_index(chapter_index)
         values = dict()
-        values.update({"index": index})
+        values.update({"chapter_index": chapter_index})
         if boss:
             values.update({"boss": boss})
         if ball_num>0:
@@ -67,7 +67,7 @@ class ChapterInfoLogic(Base):
             return _
         else:
             #新增，先判断index是否连续
-            judge_chapter_info = self.exampledb.info_by_index(index-1)
+            judge_chapter_info = self.exampledb.info_by_index(chapter_index -1)
             if not judge_chapter_info: #index不连续
                 return
             _ = self.exampledb.create(**values)

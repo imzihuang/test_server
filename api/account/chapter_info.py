@@ -22,7 +22,7 @@ class ChapterInfoHandler(RequestHandler):
 
     @verify_token
     def post(self, user_id):
-        index = int(self.get_argument('index', '0'))
+        chapter_index = int(self.get_argument('chapter_index', '0'))
         boss = self.get_argument('boss', '[]')
         ball_num = int(self.get_argument('ball_num', '1'))
         barrier_indexs = self.get_argument('barrier_indexs', '[]')
@@ -31,7 +31,7 @@ class ChapterInfoHandler(RequestHandler):
         barrier_offset = self.get_argument('barrier_offset', '[]')
 
         _op = ChapterInfoLogic()
-        _ = _op.manage_info(index, boss, ball_num, barrier_indexs, barrier_nums, barrier_types, barrier_offset)
+        _ = _op.manage_info(chapter_index, boss, ball_num, barrier_indexs, barrier_nums, barrier_types, barrier_offset)
         if _:
             self.finish(json.dumps({'state': 0}))
         else:
