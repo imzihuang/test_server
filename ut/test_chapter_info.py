@@ -3,7 +3,7 @@ from logic.chapter_info import ChapterInfoLogic
 
 _op = ChapterInfoLogic()
 data = [{
-                "index": 1,
+                "chapter_index": 1,
                 "barrier_types": [1, 1, 1],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999],
@@ -13,7 +13,7 @@ data = [{
                     "num": 18
                 }]
             }, {
-                "index": 2,
+                "chapter_index": 2,
                 "barrier_types": [1, 1, 1, 1],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 999],
@@ -23,7 +23,7 @@ data = [{
                     "num": 18
                 }]
             }, {
-                "index": 3,
+                "chapter_index": 3,
                 "barrier_types": [1, 1, 1, 1],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 999],
@@ -33,7 +33,7 @@ data = [{
                     "num": 18
                 }]
             }, {
-                "index": 4,
+                "chapter_index": 4,
                 "barrier_types": [1, 1, 1],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999],
@@ -43,7 +43,7 @@ data = [{
                     "num": 36
                 }]
             }, {
-                "index": 5,
+                "chapter_index": 5,
                 "barrier_types": [1, 1, 1, 1],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 999],
@@ -53,7 +53,7 @@ data = [{
                     "num": 72
                 }]
             }, {
-                "index": 6,
+                "chapter_index": 6,
                 "barrier_types": [1, 1, 1, 1],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 999],
@@ -63,7 +63,7 @@ data = [{
                     "num": 18
                 }]
             }, {
-                "index": 7,
+                "chapter_index": 7,
                 "barrier_types": [1, 1, 1, 1, 1, 1],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 999, 999, 999],
@@ -73,7 +73,7 @@ data = [{
                     "num": 27
                 }]
             }, {
-                "index": 8,
+                "chapter_index": 8,
                 "barrier_types": [1, 1, 1, 1],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 999],
@@ -83,7 +83,7 @@ data = [{
                     "num": 27
                 }]
             }, {
-                "index": 9,
+                "chapter_index": 9,
                 "barrier_types": [1, 1, 1, 1],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 999],
@@ -93,7 +93,7 @@ data = [{
                     "num": 18
                 }]
             }, {
-                "index": 10,
+                "chapter_index": 10,
                 "barrier_types": [1, 1, 1, 1, 1, 0],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 999, 999, 9],
@@ -103,7 +103,7 @@ data = [{
                     "num": 18
                 }]
             }, {
-                "index": 11,
+                "chapter_index": 11,
                 "barrier_types": [1, 1, 1, 1, 1, 1, 1],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 999, 999, 999, 999],
@@ -113,7 +113,7 @@ data = [{
                     "num": 18
                 }]
             }, {
-                "index": 12,
+                "chapter_index": 12,
                 "barrier_types": [1, 1, 1, 1, 1, 1],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 999, 999, 999],
@@ -123,7 +123,7 @@ data = [{
                     "num": 18
                 }]
             }, {
-                "index": 13,
+                "chapter_index": 13,
                 "barrier_types": [1, 1, 1, 1, 1, 1, 1, 1],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 999, 999, 999, 999, 999],
@@ -133,7 +133,7 @@ data = [{
                     "num": 18
                 }]
             }, {
-                "index": 14,
+                "chapter_index": 14,
                 "barrier_types": [1, 1, 1, 1, 1, 1],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 999, 999, 999],
@@ -143,7 +143,7 @@ data = [{
                     "num": 27
                 }]
             }, {
-                "index": 15,
+                "chapter_index": 15,
                 "barrier_types": [1, 1, 1, 1],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 999],
@@ -153,7 +153,7 @@ data = [{
                     "num": 36
                 }]
             }, {
-                "index": 16,
+                "chapter_index": 16,
                 "barrier_types": [1, 1],
                 "ballNum": 9,
                 "barrier_nums": [999, 999],
@@ -163,7 +163,7 @@ data = [{
                     "num": 36
                 }]
             }, {
-                "index": 17,
+                "chapter_index": 17,
                 "barrier_types": [1, 1, 1, 1, 1, 1, 1, 1, 1],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 999, 999, 999, 999, 999, 999],
@@ -173,7 +173,7 @@ data = [{
                     "num": 36
                 }]
             }, {
-                "index": 18,
+                "chapter_index": 18,
                 "barrier_types": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 999, 999, 999, 999, 999, 999, 999, 999, 999, 999, 999],
@@ -183,7 +183,7 @@ data = [{
                     "num": 18
                 }]
             }, {
-                "index": 19,
+                "chapter_index": 19,
                 "barrier_types": [1, 1, 1, 1, 1, 1, 2, 1],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 999, 999, 999, 99, 999],
@@ -193,7 +193,7 @@ data = [{
                     "num": 18
                 }]
             }, {
-                "index": 20,
+                "chapter_index": 20,
                 "barrier_types": [1, 1, 1, 1, 0, 0, 1, 2, 1],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 999, 18, 18, 999, 99, 999],
@@ -203,7 +203,7 @@ data = [{
                     "num": 56
                 }]
             }, {
-                "index": 21,
+                "chapter_index": 21,
                 "barrier_types": [1, 1, 1, 1, 0, 0, 1, 1, 1, 1],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 999, 9, 9, 999, 999, 999, 999],
@@ -213,7 +213,7 @@ data = [{
                     "num": 18
                 }]
             }, {
-                "index": 22,
+                "chapter_index": 22,
                 "barrier_types": [1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 2],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 99, 999, 999, 999, 999, 999, 999, 999, 999, 999, 999, 9, 99],
@@ -223,7 +223,7 @@ data = [{
                     "num": 18
                 }]
             }, {
-                "index": 23,
+                "chapter_index": 23,
                 "barrier_types": [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 999, 999, 999, 999, 999, 9, 9, 9],
@@ -233,7 +233,7 @@ data = [{
                     "num": 18
                 }]
             }, {
-                "index": 24,
+                "chapter_index": 24,
                 "barrier_types": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 999, 999, 999, 999, 999, 999, 999, 999, 999, 9, 9],
@@ -243,7 +243,7 @@ data = [{
                     "num": 36
                 }]
             }, {
-                "index": 25,
+                "chapter_index": 25,
                 "barrier_types": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 999, 999, 999, 999, 999, 999, 999, 999, 999, 9, 9],
@@ -253,7 +253,7 @@ data = [{
                     "num": 36
                 }]
             }, {
-                "index": 26,
+                "chapter_index": 26,
                 "barrier_types": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 2],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 999, 999, 999, 999, 999, 999, 999, 999, 999, 9, 9, 99],
@@ -263,7 +263,7 @@ data = [{
                     "num": 18
                 }]
             }, {
-                "index": 27,
+                "chapter_index": 27,
                 "barrier_types": [1, 1, 0, 0, 0, 0, 2],
                 "ballNum": 9,
                 "barrier_nums": [999, 999, 9, 9, 9, 9, 99],
@@ -273,7 +273,7 @@ data = [{
                     "num": 36
                 }]
             }, {
-                "index": 28,
+                "chapter_index": 28,
                 "barrier_types": [0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 2],
                 "ballNum": 9,
                 "barrier_nums": [9, 9, 9, 9, 999, 999, 9, 9, 9, 9, 9, 9, 99],
@@ -283,7 +283,7 @@ data = [{
                     "num": 36
                 }]
             }, {
-                "index": 29,
+                "chapter_index": 29,
                 "barrier_types": [0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0],
                 "ballNum": 9,
                 "barrier_nums": [9, 9, 9, 999, 999, 9, 999, 999, 9, 9, 9, 9, 9, 9],
@@ -293,7 +293,7 @@ data = [{
                     "num": 18
                 }]
             }, {
-                "index": 30,
+                "chapter_index": 30,
                 "barrier_types": [0, 0, 1, 0, 2, 2, 0, 1, 1, 1, 1, 2, 2, 0, 0, 0, 0, 0],
                 "ballNum": 9,
                 "barrier_nums": [9, 9, 999, 9, 99, 99, 9, 999, 999, 999, 999, 99, 99, 9, 9, 9, 9, 9],

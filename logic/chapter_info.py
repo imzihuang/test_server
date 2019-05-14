@@ -44,7 +44,7 @@ class ChapterInfoLogic(Base):
                     barrier_nums='[]',
                     barrier_types='[]',
                     barrier_offset='[]'):
-        if chapter_index==0:
+        if chapter_index==0 or not chapter_index:
             return
         chapter_info = self.exampledb.info_by_index(chapter_index)
         values = dict()
