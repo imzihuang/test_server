@@ -119,6 +119,7 @@ class ChapterInfo(Base, ModelBase):
     barrier_offset = Column(VARCHAR(200))
     create_time = Column(DateTime, default=datetime.now, nullable=False)
     updated_time = Column(DateTime, default=datetime.now, onupdate=datetime.now)
+    deleted = Column(Boolean, default=False)
 
     def to_dict(self):
         return _to_dict(self)
