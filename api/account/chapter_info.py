@@ -22,9 +22,9 @@ class ChapterInfoHandler(RequestHandler):
 
     @verify_token
     def post(self, user_id):
-        index = int(self.get_argument('index', 0))
+        index = int(self.get_argument('index', '0'))
         boss = self.get_argument('boss', '[]')
-        ball_num = int(self.get_argument('ball_num', 1))
+        ball_num = int(self.get_argument('ball_num', '1'))
         barrier_indexs = self.get_argument('barrier_indexs', '[]')
         barrier_nums = self.get_argument('barrier_nums', '[]')
         barrier_types = self.get_argument('barrier_types', '[]')

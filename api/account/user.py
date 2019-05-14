@@ -32,13 +32,13 @@ class UserHandler(RequestHandler):
 
     @verify_token
     def put(self, user_id):
-        property_glod = int(self.get_argument('property_glod', 0))
-        property_diamond = int(self.get_argument('property_diamond', 0))
-        stance_items = self.get_argument('stance_items', '{}')
+        property_glod = int(self.get_argument('property_glod', '0'))
+        property_diamond = int(self.get_argument('property_diamond', '0'))
+        stance_items = self.get_argument('stance_items', '[]')
         base_items = self.get_argument('base_items', '[]')
         book_ids = self.get_argument('book_ids', '[]')
         buy_nums = self.get_argument('buy_nums', '[]')
-        skill_items = self.get_argument('skill_items', [])
+        skill_items = self.get_argument('skill_items', '[]')
 
         _op = UserLogic()
         _ = _op.update_gamedata(user_id,
