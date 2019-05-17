@@ -95,6 +95,17 @@ class Advertising(Base, ModelBase):
     def to_dict(self):
         return _to_dict(self)
 
+class Welfare(Base, ModelBase):
+    __tablename__ = 'welfare'
+    id = Column(VARCHAR(36), primary_key=True)
+    user_id = Column(VARCHAR(36))
+    welfare_num = Column(Integer, default=0)
+    lastdate = Column(Date, nullable=False)
+    deleted = Column(Boolean, default=False)
+
+    def to_dict(self):
+        return _to_dict(self)
+
 class Chapter(Base, ModelBase):
     __tablename__ = 'chapter'
     id = Column(VARCHAR(36), primary_key=True)

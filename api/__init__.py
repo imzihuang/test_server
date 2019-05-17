@@ -15,6 +15,7 @@ def _handlers():
         (r'/game/share', account.ShareHandler),
         (r'/game/signin', account.SigninHandler),
         (r'/game/advertising', account.AdvertisingHandler),
+        (r'/game/welfare', account.WelfareHandler),
         (r'/game/chapter', account.ChapterHandler),
         (r'/game/chapter_info', account.ChapterInfoHandler),
 
