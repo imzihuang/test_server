@@ -18,6 +18,7 @@ def _handlers():
         (r'/game/welfare', account.WelfareHandler),
         (r'/game/chapter', account.ChapterHandler),
         (r'/game/chapter_info', account.ChapterInfoHandler),
+        (r'/game/notice', account.NoticeHandler),
 
         (prefix + r'(.*\.(css|png|js))', StaticFileHandler,
          {'path': default_settings.get('static_path')}),

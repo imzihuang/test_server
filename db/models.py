@@ -111,6 +111,7 @@ class Chapter(Base, ModelBase):
     id = Column(VARCHAR(36), primary_key=True)
     user_id = Column(VARCHAR(36))
     chapter_num = Column(Integer, default=0)
+    not_pass = Column(VARCHAR(20), default="")
     create_time = Column(DateTime, default=datetime.now, nullable=False)
     updated_time = Column(DateTime, default=datetime.now, onupdate=datetime.now)
     deleted = Column(Boolean, default=False)

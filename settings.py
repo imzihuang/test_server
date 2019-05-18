@@ -22,7 +22,7 @@ default_settings = {
     'buy_nums':[],#[{"id":"0101", "g":1, "d":1}] 购买一次
     'skill_items':[],#技能位[{"m_id": "0101", 'lvl':1, "index":1}]
     'version': "1.0",
-    'content': "内容",
+    'content': "新增弹珠营救模式，大家一起去营救可爱的恐龙宝宝吧~~",
 }
 
 models = []
