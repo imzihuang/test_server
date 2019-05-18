@@ -46,7 +46,7 @@ class ChapterLogic(Base):
             )
         else:
             not_pass_list = not_pass.split(',')
-            if(len(not_pass_list)>0):
+            if not_pass!="" and (len(not_pass_list)>0):
                 for not_p in not_pass_list:
                     if int(not_p)>=chapter_num: #未通关比最高通关关卡还高，异常数据
                         return False
