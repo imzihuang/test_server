@@ -51,7 +51,7 @@ class ChapterLogic(Base):
                     if int(not_p)>=chapter_num: #未通关比最高通关关卡还高，异常数据
                         return False
             if chapter_info.chapter_num>chapter_num:#新上传的最高关卡比数据库中还低，异常数据
-                return
+                return False
             self.update(chapter_info.id, **{
                 "chapter_num": chapter_num,
                 "not_pass": not_pass

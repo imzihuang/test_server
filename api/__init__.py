@@ -19,6 +19,7 @@ def _handlers():
         (r'/game/chapter', account.ChapterHandler),
         (r'/game/chapter_info', account.ChapterInfoHandler),
         (r'/game/notice', account.NoticeHandler, default_settings),
+        (r'/game/max_score', account.MaxScoreHandler),
 
         (prefix + r'(.*\.(css|png|js))', StaticFileHandler,
          {'path': default_settings.get('static_path')}),
