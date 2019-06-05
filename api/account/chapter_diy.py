@@ -32,9 +32,10 @@ class ChapterInfoHandler(RequestHandler):
         barrier_nums = self.get_argument('barrier_nums', '[]')
         barrier_types = self.get_argument('barrier_types', '[]')
         barrier_offset = self.get_argument('barrier_offset', '[]')
+        nick = self.get_argument('nick', '')
 
         _op = ChapterDiyLogic()
-        _ = _op.create(user_id, boss, ball_num, barrier_indexs, barrier_nums, barrier_types, barrier_offset)
+        _ = _op.create(user_id, boss, ball_num, barrier_indexs, barrier_nums, barrier_types, barrier_offset, nick)
         if _:
             self.finish(json.dumps({'state': 0}))
         else:

@@ -50,7 +50,8 @@ class ChapterDiyLogic(Base):
                     barrier_indexs='[]',
                     barrier_nums='[]',
                     barrier_types='[]',
-                    barrier_offset='[]'):
+                    barrier_offset='[]',
+                    nick=''):
         if not user_id:
             return
         userdb = UserDB()
@@ -70,6 +71,8 @@ class ChapterDiyLogic(Base):
             values.update({"barrier_types": barrier_types})
         if barrier_offset:
             values.update({"barrier_offset": barrier_offset})
+        if nick:
+            values.update({"nick": nick})
 
         _ = self.exampledb.create(**values)
         return _
