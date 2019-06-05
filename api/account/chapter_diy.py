@@ -26,6 +26,7 @@ class ChapterInfoHandler(RequestHandler):
 
     @verify_token
     def post(self, user_id):
+        diy_id = self.get_argument('diy_id', '')
         boss = self.get_argument('boss', '[]')
         ball_num = int(self.get_argument('ball_num', "1"))
         barrier_indexs = self.get_argument('barrier_indexs', '[]')
@@ -35,7 +36,7 @@ class ChapterInfoHandler(RequestHandler):
         nick = self.get_argument('nick', '')
 
         _op = ChapterDiyLogic()
-        _ = _op.create(user_id, boss, ball_num, barrier_indexs, barrier_nums, barrier_types, barrier_offset, nick)
+        _ = _op.update_or_create(user_id, diy_id, boss, ball_num, barrier_indexs, barrier_nums, barrier_types, barrier_offset, nick)
         if _:
             self.finish(json.dumps({'state': 0}))
         else:

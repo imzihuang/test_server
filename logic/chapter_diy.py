@@ -45,7 +45,7 @@ class ChapterDiyLogic(Base):
                 "data": views_list,
                 }
 
-    def create(self, user_id, boss='[]',
+    def update_or_create(self, user_id, diy_id="", boss='[]',
                     ball_num=1,
                     barrier_indexs='[]',
                     barrier_nums='[]',
@@ -73,8 +73,10 @@ class ChapterDiyLogic(Base):
             values.update({"barrier_offset": barrier_offset})
         if nick:
             values.update({"nick": nick})
-
-        _ = self.exampledb.create(**values)
+        if diy_id:
+            _ = self.exampledb.update(diy_id, active=False, **values)
+        else:
+            _ = self.exampledb.create(**values)
         return _
 
     def active(self, id=""):
