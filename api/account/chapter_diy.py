@@ -8,7 +8,7 @@ from logic.chapter_diy import ChapterDiyLogic
 
 LOG = logging.getLogger(__name__)
 
-class ChapterInfoHandler(RequestHandler):
+class ChapterDiyHandler(RequestHandler):
     def initialize(self, **kwds):
         pass
 
