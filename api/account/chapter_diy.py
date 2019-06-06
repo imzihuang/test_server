@@ -36,9 +36,9 @@ class ChapterDiyHandler(RequestHandler):
         nick = self.get_argument('nick', '')
 
         _op = ChapterDiyLogic()
-        _ = _op.update_or_create(user_id, diy_id, boss, ball_num, barrier_indexs, barrier_nums, barrier_types, barrier_offset, nick)
-        if _:
-            self.finish(json.dumps({'state': 0}))
+        diy_id = _op.update_or_create(user_id, diy_id, boss, ball_num, barrier_indexs, barrier_nums, barrier_types, barrier_offset, nick)
+        if diy_id:
+            self.finish(json.dumps({'state': 0, 'diy_id': diy_id}))
         else:
             self.finish(json.dumps({'state': 1}))
 
