@@ -86,7 +86,7 @@ class ChapterDiyLogic(Base):
         diy_info = self.exampledb.info(id)
         if not diy_info:
             return
-        _ = self.exampledb.update(id, active=True)
+        _ = self.exampledb.update(id, activate=True)
         return _
 
 
