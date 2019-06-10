@@ -74,10 +74,11 @@ class ChapterDiyLogic(Base):
         if nick:
             values.update({"nick": nick})
         if diy_id:
-            _ = self.exampledb.update(diy_id, active=False, **values)
+            _ = self.exampledb.update(diy_id, activate=False, **values)
+            return diy_id
         else:
             _ = self.exampledb.create(**values)
-        return _
+            return _.get("id")
 
     def active(self, id=""):
         if not id or id=="":
@@ -85,7 +86,7 @@ class ChapterDiyLogic(Base):
         diy_info = self.exampledb.info(id)
         if not diy_info:
             return
-        _ = self.exampledb.update(id, active=True)
+        _ = self.exampledb.update(id, activate=True)
         return _
 
 
