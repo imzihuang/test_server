@@ -4,7 +4,7 @@ from tornado.web import RequestHandler
 import logging
 import json
 from api.base import verify_token
-from logic.max_score import MaxScoreLogic
+from logic.hoodle.max_score import MaxScoreLogic
 
 LOG = logging.getLogger(__name__)
 

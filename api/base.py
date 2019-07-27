@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 import time
 from util import common_util, convert
-from logic.user import UserLogic
+from logic.hoodle.user import UserLogic
 import logging
 LOG = logging.getLogger(__name__)
 def verify_token(func):

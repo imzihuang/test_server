@@ -1,13 +1,12 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import time
 from util.exception import ParamExist
 from logic import Base
 import logging
 import json
-from db.example.wx_user import WxUserDB
-from db.example.user import UserDB
+from db.example.hoodle.wx_user import WxUserDB
+from db.example.hoodle.user import UserDB
 LOG = logging.getLogger(__name__)
 
 class WXUserLogic(Base):

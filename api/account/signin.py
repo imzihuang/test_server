@@ -4,7 +4,7 @@ from tornado.web import RequestHandler
 import logging
 import json
 from api.base import verify_token
-from logic.signin import SigninLogic
+from logic.hoodle.signin import SigninLogic
 
 LOG = logging.getLogger(__name__)
 

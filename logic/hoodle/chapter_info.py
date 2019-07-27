@@ -4,7 +4,7 @@
 import json
 import logging
 from logic import Base
-from db.example.chapter_info import ChapterInfoDB
+from db.example.hoodle.chapter_info import ChapterInfoDB
 
 LOG = logging.getLogger(__name__)
 

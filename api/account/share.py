@@ -4,7 +4,7 @@ from tornado.web import RequestHandler
 import logging
 import json
 from api.base import verify_token
-from logic.share import ShareLogic
+from logic.hoodle.share import ShareLogic
 
 LOG = logging.getLogger(__name__)
 

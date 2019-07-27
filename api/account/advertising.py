@@ -4,7 +4,7 @@ from tornado.web import RequestHandler
 import logging
 import json
 from api.base import verify_token
-from logic.advertising import AdvertisingLogic
+from logic.hoodle.advertising import AdvertisingLogic
 
 LOG = logging.getLogger(__name__)
 

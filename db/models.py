@@ -24,7 +24,7 @@ def _to_dict(model_obj):
             result.update({c.name: getattr(model_obj, c.name, None)})
     return result
 
-
+################################恐龙弹弹弹 begin###################################################################
 class UserInfo(Base, ModelBase):
     __tablename__ = 'user_info'
     id = Column(VARCHAR(36), primary_key=True)
@@ -166,6 +166,43 @@ class MaxScore(Base, ModelBase):
 
     def to_dict(self):
         return _to_dict(self)
+
+################################恐龙弹弹弹 end###################################################################
+
+################################鸡腿大作战 begin#################################################################
+class DrumstickUserInfo(Base, ModelBase):
+    __tablename__ = 'drumstick_userinfo'
+    id = Column(VARCHAR(36), primary_key=True)
+    user_name = Column(VARCHAR(50))
+    recommend_id = Column(VARCHAR(36))
+    glod = Column(Float, default=0)
+    diamond = Column(Float, default=0)
+    hero_items = Column(VARCHAR(2000), nullable=False)
+    map_items = Column(VARCHAR(500), nullable=False)
+    current_hero_id = Column(VARCHAR(10), defult="h001")
+    create_time = Column(DateTime, default=datetime.now, nullable=False)
+    updated_time = Column(DateTime, default=datetime.now, onupdate=datetime.now)
+    deleted = Column(Boolean, default=False)
+
+    def to_dict(self):
+        return _to_dict(self)
+
+class DrumstickWxUserinfo(Base, ModelBase):
+    __tablename__ = 'drumstick_wx_userinfo'
+    id = Column(VARCHAR(36), primary_key=True)
+    user_id = Column(VARCHAR(36), nullable=False)
+    openid = Column(VARCHAR(50) , nullable=False)
+    code = Column(VARCHAR(36), nullable=False)
+    session_key = Column(VARCHAR(50), nullable=False)
+    wx_name = Column(VARCHAR(50))
+    recommend_id = Column(VARCHAR(36))
+    create_time = Column(DateTime, default=datetime.now, nullable=False)
+    updated_time = Column(DateTime, default=datetime.now, onupdate=datetime.now)
+    deleted = Column(Boolean, default=False)
+
+    def to_dict(self):
+        return _to_dict(self)
+################################鸡腿大作战 end###################################################################
 
 def register_db():
     engine = get_engine()

@@ -4,8 +4,8 @@
 import json
 import logging
 from logic import Base
-from db.example.chapter_diy import ChapterDiyDB
-from db.example.user import UserDB
+from db.example.hoodle.chapter_diy import ChapterDiyDB
+from db.example.hoodle.user import UserDB
 
 LOG = logging.getLogger(__name__)
 

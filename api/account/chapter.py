@@ -4,7 +4,7 @@ from tornado.web import RequestHandler
 import logging
 import json
 from api.base import verify_token
-from logic.chapter import ChapterLogic
+from logic.hoodle.chapter import ChapterLogic
 
 LOG = logging.getLogger(__name__)
 

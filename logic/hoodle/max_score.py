@@ -1,11 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import datetime
 from logic import Base
 import logging
-from db.example.max_score import MaxScoreDB
-from db.example.user import UserDB
+from db.example.hoodle.max_score import MaxScoreDB
+from db.example.hoodle.user import UserDB
 
 LOG = logging.getLogger(__name__)
 

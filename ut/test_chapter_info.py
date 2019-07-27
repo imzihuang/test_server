@@ -1,5 +1,5 @@
 import json
-from logic.chapter_info import ChapterInfoLogic
+from logic.hoodle.chapter_info import ChapterInfoLogic
 
 _op = ChapterInfoLogic()
 data = [{

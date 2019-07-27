@@ -1,11 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import datetime
 from logic import Base
 import logging
-from db.example.chapter import ChapterDB
-from db.example.user import UserDB
+from db.example.hoodle.chapter import ChapterDB
+from db.example.hoodle.user import UserDB
 
 LOG = logging.getLogger(__name__)
 

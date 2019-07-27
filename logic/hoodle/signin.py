@@ -4,8 +4,8 @@
 import datetime
 from logic import Base
 import logging
-from db.example.signin import SigninDB
-from db.example.user import UserDB
+from db.example.hoodle.signin import SigninDB
+from db.example.hoodle.user import UserDB
 
 LOG = logging.getLogger(__name__)
 

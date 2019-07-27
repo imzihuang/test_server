@@ -2,6 +2,7 @@
 
 from tornado.web import StaticFileHandler
 from api import wx_account, account
+from api import drumstick
 from settings import default_settings
 
 def _handlers():
@@ -21,6 +22,9 @@ def _handlers():
         (r'/game/chapter_diy$', account.ChapterDiyHandler),
         (r'/game/notice$', account.NoticeHandler, default_settings),
         (r'/game/max_score$', account.MaxScoreHandler),
+
+        (r' /drumstick/wx_user/login$', drumstick.DrumstickWxLoginHandler, default_settings),
+        (r' /drumstick/game/user$', drumstick.DrumstickUserHandler, default_settings),
 
         (prefix + r'(.*\.(css|png|js))', StaticFileHandler,
          {'path': default_settings.get('static_path')}),

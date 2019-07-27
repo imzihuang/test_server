@@ -6,8 +6,7 @@ from six.moves.urllib import parse
 import logging
 import json
 from util.hmac_256 import get_sign
-from api.base import verify_token
-from logic.wx_user import WXUserLogic
+from logic.hoodle.wx_user import WXUserLogic
 from util.ini_client import ini_load
 
 _conf = ini_load('config/service.ini')

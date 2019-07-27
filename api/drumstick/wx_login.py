@@ -6,16 +6,16 @@ from six.moves.urllib import parse
 from util import common_util
 import logging
 import json
-from logic.hoodle.wx_user import WXUserLogic
+from logic.drumstick.drumstick_wx_user import DrumstickWXUserLogic
 
 from util.ini_client import ini_load
 
 _conf = ini_load('config/service.ini')
-game_dic_con = _conf.get_fields('game_wx')
+game_dic_con = _conf.get_fields('drumstick_wx')
 
 LOG = logging.getLogger(__name__)
 
-class LoginHandler(RequestHandler):
+class DrumstickWxLoginHandler(RequestHandler):
     def initialize(self, book_ids, stance_items, buy_nums, skill_items, **kwds):
         self.book_ids = book_ids
         self.stance_items = stance_items
@@ -45,7 +45,7 @@ class LoginHandler(RequestHandler):
         session_key = dic_body.get('session_key')
 
         # 存储openid和session_key,并返回识别session串
-        _op = WXUserLogic()
+        _op = DrumstickWXUserLogic()
         exit_app = _op.info_by_openid(openid=openid)
         if exit_app:
             if(exit_app.get("session_key") != session_key):
@@ -58,11 +58,6 @@ class LoginHandler(RequestHandler):
                            session_key=session_key,
                            wx_name=user_name,
                            recommend_id=recommend_id,
-                           platform=platform,
-                           stance_items=self.stance_items,
-                           book_ids=self.book_ids,
-                           buy_nums=self.buy_nums,
-                           skill_items = self.skill_items
                           )
             token = common_util.gen_token(_.get("user_id"), 0)
             self.finish(json.dumps({'state': 0, 'id': _.get("user_id"), 'token': token}))

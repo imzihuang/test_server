@@ -5,7 +5,7 @@ import time
 from logic import Base
 import logging
 import json
-from db.example.user import UserDB
+from db.example.hoodle.user import UserDB
 LOG = logging.getLogger(__name__)
 
 class UserLogic(Base):
