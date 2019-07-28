@@ -36,7 +36,7 @@ class DrumstickUserLogic(Base):
         user_info = self.exampledb.info(id)
         if not user_info:
             return
-        if user_info.diamond>diamond and user_info.glod>glod:
+        if hero_items and len(json.loads(user_info.hero_items))>len(json.loads(hero_items)):
             #防止错误信息，如没有获取数据，但认证成功了，向后台写入数据
             return
         values = dict()
@@ -50,6 +50,7 @@ class DrumstickUserLogic(Base):
             values.update({"map_items": map_items})
         if current_hero_id:
             values.update({"current_hero_id": current_hero_id})
+        LOG.info(values)
         _ = self.exampledb.update(user_info.id, **values)
         return _
 
