@@ -3,7 +3,7 @@
 from tornado.web import RequestHandler
 import logging
 import json
-from api.base import verify_token
+from api.base import verify_drumstick_token
 from logic.drumstick.drumstick_user import DrumstickUserLogic
 
 LOG = logging.getLogger(__name__)
@@ -30,7 +30,7 @@ class DrumstickUserHandler(RequestHandler):
         else:
             self.finish(json.dumps({"state": 1, "message": "userinfo error"}))
 
-    @verify_token
+    @verify_drumstick_token
     def put(self, user_id):
         glod = int(self.get_argument("glod", "0"))
         diamond = int(self.get_argument("diamond", "0"))
