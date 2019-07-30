@@ -62,5 +62,3 @@ class DrumstickWxLoginHandler(RequestHandler):
                           )
             token = common_util.gen_token(_.get("user_id"), 0)
             self.finish(json.dumps({"state": 0, "id": _.get("user_id"), "token": token}))
-
-

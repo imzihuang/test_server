@@ -41,6 +41,7 @@ class DrumstickWXUserLogic(Base):
             "hero_items": json.dumps([{"h_id": "h001", "lvl": 1, "max_lvl": 2}]),
             "map_items": json.dumps(["m001", "m002"]),
             "current_hero_id": "h001",
+            "current_map_id": "m001",
         }
 
         user_info = userdb.create(**user_values)

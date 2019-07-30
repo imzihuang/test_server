@@ -22,6 +22,7 @@ class DrumstickUserLogic(Base):
             "hero_items": json.dumps([{"h_id": "h001", "lvl": 1, "max_lvl": 2}]),
             "map_items": json.dumps(["m001", "m002"]),
             "current_hero_id": "h001",
+            "current_map_id": "m001",
         }
 
         wx_obj = self.exampledb.create(**values)
@@ -32,7 +33,8 @@ class DrumstickUserLogic(Base):
                         avatar_url="",
                         hero_items="",
                         map_items="",
-                        current_hero_id="",):
+                        current_hero_id="",
+                        current_map_id=""):
         if not id:
             return
         user_info = self.exampledb.info(id)
@@ -54,7 +56,8 @@ class DrumstickUserLogic(Base):
             values.update({"map_items": map_items})
         if current_hero_id:
             values.update({"current_hero_id": current_hero_id})
-        LOG.info(values)
+        if current_map_id:
+            values.update({"current_map_id": current_map_id})
         _ = self.exampledb.update(user_info.id, **values)
         return _
 

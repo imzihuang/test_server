@@ -38,7 +38,7 @@ class DrumstickUserHandler(RequestHandler):
         hero_items = self.get_argument("hero_items", "[]")
         map_items = self.get_argument("map_items", "[]")
         current_hero_id = self.get_argument("current_hero_id", "")
-
+        current_map_id = self.get_argument("current_map_id", "")
 
         _op = DrumstickUserLogic()
         _ = _op.update_gamedata(user_id,
@@ -48,6 +48,7 @@ class DrumstickUserHandler(RequestHandler):
                                 hero_items=hero_items,
                                 map_items=map_items,
                                 current_hero_id=current_hero_id,
+                                current_map_id=current_map_id,
                                 )
         if _:
             self.finish(json.dumps({"state": 0}))

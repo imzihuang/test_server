@@ -181,6 +181,7 @@ class DrumstickUserInfo(Base, ModelBase):
     hero_items = Column(VARCHAR(2000), nullable=False)
     map_items = Column(VARCHAR(500), nullable=False)
     current_hero_id = Column(VARCHAR(10))
+    current_map_id = Column(VARCHAR(10))
     create_time = Column(DateTime, default=datetime.now, nullable=False)
     updated_time = Column(DateTime, default=datetime.now, onupdate=datetime.now)
     deleted = Column(Boolean, default=False)
