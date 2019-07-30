@@ -10,8 +10,8 @@ from logic.drumstick.drumstick_wx_user import DrumstickWXUserLogic
 
 from util.ini_client import ini_load
 
-_conf = ini_load('config/service.ini')
-game_dic_con = _conf.get_fields('drumstick_wx')
+_conf = ini_load("config/service.ini")
+game_dic_con = _conf.get_fields("drumstick_wx")
 
 LOG = logging.getLogger(__name__)
 
@@ -23,10 +23,10 @@ class DrumstickWxLoginHandler(RequestHandler):
         self.skill_items = skill_items
 
     def post(self):
-        code = self.get_argument('code', '')
-        user_name = self.get_argument('user_name', '')
-        recommend_id = self.get_argument('recommend_id', '')
-        platform = self.get_argument('platform', 'wx')  # 游戏平台
+        code = self.get_argument("code", "")
+        user_name = self.get_argument("user_name", "")
+        recommend_id = self.get_argument("recommend_id", "")
+        avatarUrl = self.get_argument("avatarUrl", "")
 
         # 微信服务器验证
         url = "https://api.weixin.qq.com/sns/jscode2session"
@@ -41,8 +41,8 @@ class DrumstickWxLoginHandler(RequestHandler):
         http_client = tornado.httpclient.HTTPClient()
         response = http_client.fetch("%s?%s" % (url, parse.urlencode(params)))
         dic_body = json.loads(response.body)
-        openid = dic_body.get('openid')
-        session_key = dic_body.get('session_key')
+        openid = dic_body.get("openid")
+        session_key = dic_body.get("session_key")
 
         # 存储openid和session_key,并返回识别session串
         _op = DrumstickWXUserLogic()
@@ -51,15 +51,16 @@ class DrumstickWxLoginHandler(RequestHandler):
             if(exit_app.get("session_key") != session_key):
                 _op.update(exit_app.get("id"), session_key=session_key)
             token = common_util.gen_token(exit_app.get("user_id"), 0)
-            self.finish(json.dumps({'state': 0, 'id': exit_app.get("user_id"), 'token': token}))
+            self.finish(json.dumps({"state": 0, "id": exit_app.get("user_id"), "token": token}))
         else:
             _ = _op.create(code=code,
                            openid=openid,
                            session_key=session_key,
                            wx_name=user_name,
+                           avatarUrl=avatarUrl,
                            recommend_id=recommend_id,
                           )
             token = common_util.gen_token(_.get("user_id"), 0)
-            self.finish(json.dumps({'state': 0, 'id': _.get("user_id"), 'token': token}))
+            self.finish(json.dumps({"state": 0, "id": _.get("user_id"), "token": token}))
 
 

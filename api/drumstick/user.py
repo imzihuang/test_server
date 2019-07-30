@@ -32,8 +32,9 @@ class DrumstickUserHandler(RequestHandler):
 
     @verify_drumstick_token
     def put(self, user_id):
-        glod = int(self.get_argument("glod", "0"))
-        diamond = int(self.get_argument("diamond", "0"))
+        glod = int(self.get_argument("glod", "-1"))
+        diamond = int(self.get_argument("diamond", "-1"))
+        avatarUrl = self.get_argument("avatarUrl", "")
         hero_items = self.get_argument("hero_items", "[]")
         map_items = self.get_argument("map_items", "[]")
         current_hero_id = self.get_argument("current_hero_id", "")
@@ -43,6 +44,7 @@ class DrumstickUserHandler(RequestHandler):
         _ = _op.update_gamedata(user_id,
                                 glod=glod,
                                 diamond=diamond,
+                                avatarUrl=avatarUrl,
                                 hero_items=hero_items,
                                 map_items=map_items,
                                 current_hero_id=current_hero_id,

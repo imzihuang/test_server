@@ -12,12 +12,13 @@ class DrumstickUserLogic(Base):
     def __init__(self):
         self.exampledb = DrumstickUserDB()
 
-    def create(self, user_name="", recommend_id=""):
+    def create(self, user_name="", recommend_id="", avatarUrl=""):
         values = {
             "user_name": user_name,
             "recommend_id": recommend_id,
             "glod": 10000, #default
             "diamond": 100, #default
+            "avatarUrl": avatarUrl,
             "hero_items": json.dumps([{"h_id": "h001", "lvl": 1, "max_lvl": 2}]),
             "map_items": json.dumps(["m001", "m002"]),
             "current_hero_id": "h001",
@@ -26,8 +27,9 @@ class DrumstickUserLogic(Base):
         wx_obj = self.exampledb.create(**values)
         return wx_obj
 
-    def update_gamedata(self, id, glod=0,
-                        diamond=0,
+    def update_gamedata(self, id, glod=-1,
+                        diamond=-1,
+                        avatarUrl="",
                         hero_items="",
                         map_items="",
                         current_hero_id="",):
@@ -44,6 +46,8 @@ class DrumstickUserLogic(Base):
             values.update({"glod": glod})
         if diamond>=0:
             values.update({"diamond": diamond})
+        if avatarUrl:
+            values.update({"avatarUrl": avatarUrl})
         if hero_items:
             values.update({"hero_items": hero_items})
         if map_items:
