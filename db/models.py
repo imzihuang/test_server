@@ -174,7 +174,7 @@ class DrumstickUserInfo(Base, ModelBase):
     __tablename__ = 'drumstick_userinfo'
     id = Column(VARCHAR(36), primary_key=True)
     user_name = Column(VARCHAR(50))
-    avatarUrl = Column(VARCHAR(150))
+    avatar_url = Column(VARCHAR(150))
     recommend_id = Column(VARCHAR(36))
     glod = Column(Float, default=0)
     diamond = Column(Float, default=0)

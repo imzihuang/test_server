@@ -34,7 +34,7 @@ class DrumstickUserHandler(RequestHandler):
     def put(self, user_id):
         glod = int(self.get_argument("glod", "-1"))
         diamond = int(self.get_argument("diamond", "-1"))
-        avatarUrl = self.get_argument("avatarUrl", "")
+        avatar_url = self.get_argument("avatar_url", "")
         hero_items = self.get_argument("hero_items", "[]")
         map_items = self.get_argument("map_items", "[]")
         current_hero_id = self.get_argument("current_hero_id", "")
@@ -44,7 +44,7 @@ class DrumstickUserHandler(RequestHandler):
         _ = _op.update_gamedata(user_id,
                                 glod=glod,
                                 diamond=diamond,
-                                avatarUrl=avatarUrl,
+                                avatar_url=avatar_url,
                                 hero_items=hero_items,
                                 map_items=map_items,
                                 current_hero_id=current_hero_id,

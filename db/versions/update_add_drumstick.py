@@ -9,7 +9,7 @@ def define_tables(meta):
         'drumstick_userinfo', meta,
         Column('id', String(36), primary_key=True),
         Column('user_name', String(50)),
-        Column('avatarUrl', String(150)),
+        Column('avatar_url', String(150)),
         Column('recommend_id', String(36)),
         Column('glod', Integer, default=0),
         Column('diamond', Integer, default=0),

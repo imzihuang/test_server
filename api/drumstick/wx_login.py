@@ -26,7 +26,7 @@ class DrumstickWxLoginHandler(RequestHandler):
         code = self.get_argument("code", "")
         user_name = self.get_argument("user_name", "")
         recommend_id = self.get_argument("recommend_id", "")
-        avatarUrl = self.get_argument("avatarUrl", "")
+        avatar_url = self.get_argument("avatar_url", "")
 
         # 微信服务器验证
         url = "https://api.weixin.qq.com/sns/jscode2session"
@@ -57,7 +57,7 @@ class DrumstickWxLoginHandler(RequestHandler):
                            openid=openid,
                            session_key=session_key,
                            wx_name=user_name,
-                           avatarUrl=avatarUrl,
+                           avatar_url=avatar_url,
                            recommend_id=recommend_id,
                           )
             token = common_util.gen_token(_.get("user_id"), 0)

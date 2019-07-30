@@ -13,7 +13,7 @@ class DrumstickWXUserLogic(Base):
     def __init__(self):
         self.exampledb = DrumstickWxUserDB()
 
-    def create(self, code="", openid="", session_key="", wx_name="", recommend_id="", avatarUrl=""):
+    def create(self, code="", openid="", session_key="", wx_name="", recommend_id="", avatar_url=""):
         if self.lists(openid=openid):
             raise ParamExist(openid=openid)
 
@@ -35,7 +35,7 @@ class DrumstickWXUserLogic(Base):
         user_values = {
             "user_name": wx_name,
             "recommend_id": recommend_id,
-            "avatarUrl": avatarUrl,
+            "avatar_url": avatar_url,
             "glod": 2000, #default
             "diamond": 10, #default
             "hero_items": json.dumps([{"h_id": "h001", "lvl": 1, "max_lvl": 2}]),
