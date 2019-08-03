@@ -16,10 +16,10 @@ class DrumstickUserLogic(Base):
         values = {
             "user_name": user_name,
             "recommend_id": recommend_id,
-            "glod": 10000, #default
-            "diamond": 100, #default
+            "glod": 40000, #default
+            "diamond": 400, #default
             "avatar_url": avatar_url,
-            "hero_items": json.dumps([{"h_id": "h001", "lvl": 1, "max_lvl": 2}]),
+            "hero_items": json.dumps([{"h_id": "h001", "lvl": 1, "max_lvl": 2}, {"h_id": "h002", "lvl": 1, "max_lvl": 2}]),
             "map_items": json.dumps(["m001", "m002"]),
             "current_hero_id": "h001",
             "current_map_id": "m001",

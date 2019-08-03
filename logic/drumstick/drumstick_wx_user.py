@@ -36,9 +36,9 @@ class DrumstickWXUserLogic(Base):
             "user_name": wx_name,
             "recommend_id": recommend_id,
             "avatar_url": avatar_url,
-            "glod": 2000, #default
-            "diamond": 10, #default
-            "hero_items": json.dumps([{"h_id": "h001", "lvl": 1, "max_lvl": 2}]),
+            "glod": 40000, #default
+            "diamond": 400, #default
+            "hero_items": json.dumps([{"h_id": "h001", "lvl": 1, "max_lvl": 2}, {"h_id": "h002", "lvl": 1, "max_lvl": 2}]),
             "map_items": json.dumps(["m001", "m002"]),
             "current_hero_id": "h001",
             "current_map_id": "m001",
