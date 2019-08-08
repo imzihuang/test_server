@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 from sqlalchemy import Boolean, Column, DateTime, ForeignKey, Index
-from sqlalchemy import Integer, MetaData, String, Table, Text, UniqueConstraint
+from sqlalchemy import Integer, MetaData, String, Table, Text, UniqueConstraint, Float
 from test_server.db.base import *
 
 def define_tables(meta):
@@ -11,8 +11,8 @@ def define_tables(meta):
         Column('user_name', String(50)),
         Column('avatar_url', String(150)),
         Column('recommend_id', String(36)),
-        Column('glod', Integer, default=0),
-        Column('diamond', Integer, default=0),
+        Column('glod', Float, default=0),
+        Column('diamond', Float, default=0),
         Column('hero_items', String(2000), nullable=False),
         Column('map_items', String(500), nullable=False),
         Column('current_hero_id', String(10)),
