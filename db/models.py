@@ -177,7 +177,7 @@ class DrumstickUserInfo(Base, ModelBase):
     avatar_url = Column(VARCHAR(150))
     recommend_id = Column(VARCHAR(36))
     glod = Column(Float, default=0)
-    diamond = Column(Float, default=0)
+    diamond = Column(Integer, default=0)
     hero_items = Column(VARCHAR(2000), nullable=False)
     map_items = Column(VARCHAR(500), nullable=False)
     current_hero_id = Column(VARCHAR(10))

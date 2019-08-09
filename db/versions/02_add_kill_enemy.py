@@ -7,9 +7,9 @@ from test_server.db.base import *
 def upgrade(meta):
     # Add connection_info column to attachment table
     userinfo = Table('drumstick_userinfo', meta, autoload=True)
-    kill_enemy = Column("kill_enemy", Float, default=0) #杀敌数
+    new_column = Column("kill_enemy", Float, default=0) #杀敌数
     if not hasattr(userinfo.c, 'kill_enemy'):
-        userinfo.create_column(kill_enemy)
+        userinfo.create_column(new_column)
 
 
 if __name__ == "__main__":
