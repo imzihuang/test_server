@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from sqlalchemy import MetaData, Table, Column, Text
+from sqlalchemy import MetaData, Table, Column, Text, Float
+from test_server.db.base import *
 
 
 def upgrade(meta):
