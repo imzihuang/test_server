@@ -34,7 +34,8 @@ class DrumstickUserLogic(Base):
                         hero_items="",
                         map_items="",
                         current_hero_id="",
-                        current_map_id=""):
+                        current_map_id="",
+                        kill_enemy=0):
         if not id:
             return
         user_info = self.exampledb.info(id)
@@ -58,6 +59,8 @@ class DrumstickUserLogic(Base):
             values.update({"current_hero_id": current_hero_id})
         if current_map_id:
             values.update({"current_map_id": current_map_id})
+        if kill_enemy>0:
+            values.update({"kill_enemy": kill_enemy})
         _ = self.exampledb.update(user_info.id, **values)
         return _
 
