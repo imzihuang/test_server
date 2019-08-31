@@ -21,6 +21,7 @@ class DrumstickUserLogic(Base):
             "avatar_url": avatar_url,
             "hero_items": json.dumps([{"h_id": "h001", "lvl": 1, "max_lvl": 2}, {"h_id": "h002", "lvl": 1, "max_lvl": 2}]),
             "map_items": json.dumps(["m001", "m002"]),
+            "prop_itms": json.dumps([{"id":"s001", "num":1}, {"id":"s002", "num":1},{"id":"s003", "num":1}, {"id":"s004", "num":1}]),
             "current_hero_id": "h001",
             "current_map_id": "m001",
         }
@@ -33,6 +34,7 @@ class DrumstickUserLogic(Base):
                         avatar_url="",
                         hero_items="",
                         map_items="",
+                        prop_itms = "",
                         current_hero_id="",
                         current_map_id="",
                         kill_enemy=0):
@@ -55,6 +57,8 @@ class DrumstickUserLogic(Base):
             values.update({"hero_items": hero_items})
         if map_items:
             values.update({"map_items": map_items})
+        if prop_itms:
+            values.update({"prop_itms": prop_itms})
         if current_hero_id:
             values.update({"current_hero_id": current_hero_id})
         if current_map_id:
@@ -81,6 +85,9 @@ class DrumstickUserLogic(Base):
 
             map_items = view.get("map_items", "[]")
             view.update({"map_items": json.loads(map_items)})
+
+            prop_itms = view.get("prop_itms", "[]")
+            view.update({"prop_itms": json.loads(prop_itms)})
 
         count = self.exampledb.counts(**filters)
         return {"count": count,
