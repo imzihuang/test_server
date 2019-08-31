@@ -37,7 +37,7 @@ class DrumstickUserHandler(RequestHandler):
         avatar_url = self.get_argument("avatar_url", "")
         hero_items = self.get_argument("hero_items", "[]")
         map_items = self.get_argument("map_items", "[]")
-        prop_itms = self.get_argument("prop_itms", "[]")
+        prop_items = self.get_argument("prop_items", "[]")
         current_hero_id = self.get_argument("current_hero_id", "")
         current_map_id = self.get_argument("current_map_id", "")
         kill_enemy = self.get_argument("kill_enemy", 0)
@@ -49,7 +49,7 @@ class DrumstickUserHandler(RequestHandler):
                                 avatar_url=avatar_url,
                                 hero_items=hero_items,
                                 map_items=map_items,
-                                prop_itms = prop_itms,
+                                prop_items = prop_items,
                                 current_hero_id=current_hero_id,
                                 current_map_id=current_map_id,
                                 kill_enemy= kill_enemy,

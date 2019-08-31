@@ -40,7 +40,7 @@ class DrumstickWXUserLogic(Base):
             "diamond": 400, #default
             "hero_items": json.dumps([{"h_id": "h001", "lvl": 1, "max_lvl": 2}, {"h_id": "h002", "lvl": 1, "max_lvl": 2}]),
             "map_items": json.dumps(["m001", "m002"]),
-            "prop_itms": json.dumps([{"id":"s001", "num":1}, {"id":"s002", "num":1},{"id":"s003", "num":1}, {"id":"s004", "num":1}]),
+            "prop_items": json.dumps([{"id":"s001", "num":1}, {"id":"s002", "num":1},{"id":"s003", "num":1}, {"id":"s004", "num":1}]),
             "current_hero_id": "h001",
             "current_map_id": "m001",
         }
