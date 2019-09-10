@@ -41,6 +41,10 @@ class DrumstickUserHandler(RequestHandler):
         current_hero_id = self.get_argument("current_hero_id", "")
         current_map_id = self.get_argument("current_map_id", "")
         kill_enemy = self.get_argument("kill_enemy", 0)
+        max_lift = self.get_argument("max_lift", 0)
+        lift_lvl1 = self.get_argument("lift_lvl1", 0)
+        lift_lvl2 = self.get_argument("lift_lvl2", 0)
+        lift_lvl3 = self.get_argument("lift_lvl3", 0)
 
         _op = DrumstickUserLogic()
         _ = _op.update_gamedata(user_id,
@@ -53,6 +57,10 @@ class DrumstickUserHandler(RequestHandler):
                                 current_hero_id=current_hero_id,
                                 current_map_id=current_map_id,
                                 kill_enemy= kill_enemy,
+                                max_lift=max_lift,
+                                lift_lvl1=lift_lvl1,
+                                lift_lvl2=lift_lvl2,
+                                lift_lvl3=lift_lvl3
                                 )
         if _:
             self.finish(json.dumps({"state": 0}))

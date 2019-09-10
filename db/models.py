@@ -183,7 +183,11 @@ class DrumstickUserInfo(Base, ModelBase):
     prop_items = Column(VARCHAR(500), nullable=False)
     current_hero_id = Column(VARCHAR(10))
     current_map_id = Column(VARCHAR(10))
-    kill_enemy = Column(Float, default=0) #杀敌数
+    kill_enemy = Column(Integer, default=0) #杀敌数
+    max_lift = Column(Integer, default=0) #历史最高分
+    lift_lvl1 = Column(Integer, default=0)#2000分以上次数
+    lift_lvl2 = Column(Integer, default=0)#2500分以上次数
+    lift_lvl3 = Column(Integer, default=0)#3000分以上次数
     create_time = Column(DateTime, default=datetime.now, nullable=False)
     updated_time = Column(DateTime, default=datetime.now, onupdate=datetime.now)
     deleted = Column(Boolean, default=False)

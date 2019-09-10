@@ -37,7 +37,12 @@ class DrumstickUserLogic(Base):
                         prop_items = "",
                         current_hero_id="",
                         current_map_id="",
-                        kill_enemy=0):
+                        kill_enemy=0,
+                        max_lift=0,
+                        lift_lvl1=0,
+                        lift_lvl2=0,
+                        lift_lvl3=0):
+
         if not id:
             return
         user_info = self.exampledb.info(id)
@@ -65,6 +70,14 @@ class DrumstickUserLogic(Base):
             values.update({"current_map_id": current_map_id})
         if kill_enemy>0:
             values.update({"kill_enemy": kill_enemy})
+        if max_lift>0:
+            values.update({"max_lift": max_lift})
+        if lift_lvl1>0:
+            values.update({"lift_lvl1": lift_lvl1})
+        if lift_lvl2:
+            values.update({"lift_lvl2": lift_lvl2})
+        if lift_lvl3:
+            values.update({"lift_lvl3": lift_lvl3})
         _ = self.exampledb.update(user_info.id, **values)
         return _
 
