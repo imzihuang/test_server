@@ -221,6 +221,17 @@ class DrumstickAd(Base, ModelBase):
 
     def to_dict(self):
         return _to_dict(self)
+
+class DrumstickCheckIn(Base, ModelBase):
+    __tablename__ = 'drumstick_checkin'
+    id = Column(VARCHAR(36), primary_key=True)
+    user_id = Column(VARCHAR(36))
+    checkin_num = Column(Integer, default=0)
+    lastdate = Column(Date, nullable=False)
+    deleted = Column(Boolean, default=False)
+
+    def to_dict(self):
+        return _to_dict(self)
 ################################鸡腿大作战 end###################################################################
 
 def register_db():
