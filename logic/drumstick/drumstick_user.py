@@ -128,9 +128,9 @@ class DrumstickUserLogic(Base):
             oldTime = int(time.mktime(timeArray))  # 最后一次活跃时间
             currentTime = time.time()  # 当前时间戳
             if int(currentTime - oldTime)< 60*60*24*2:#2天内，算是活跃
-                active.push({"avatar_url": userInfo.avatar_url})
+                active.append({"avatar_url": userInfo.avatar_url})
             else:
-                no_active.push({"avatar_url": userInfo.avatar_url})
+                no_active.append({"avatar_url": userInfo.avatar_url})
         return {
             "no_active":no_active,
             "active":active
