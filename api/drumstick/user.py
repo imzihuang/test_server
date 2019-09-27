@@ -40,11 +40,11 @@ class DrumstickUserHandler(RequestHandler):
         prop_items = self.get_argument("prop_items", "[]")
         current_hero_id = self.get_argument("current_hero_id", "")
         current_map_id = self.get_argument("current_map_id", "")
-        kill_enemy = self.get_argument("kill_enemy", 0)
-        max_lift = self.get_argument("max_lift", 0)
-        lift_lvl1 = self.get_argument("lift_lvl1", 0)
-        lift_lvl2 = self.get_argument("lift_lvl2", 0)
-        lift_lvl3 = self.get_argument("lift_lvl3", 0)
+        kill_enemy = int(self.get_argument("kill_enemy", "0"))
+        max_lift = int(self.get_argument("max_lift", "0"))
+        lift_lvl1 = int(self.get_argument("lift_lvl1", "0"))
+        lift_lvl2 = int(self.get_argument("lift_lvl2", "0"))
+        lift_lvl3 = int(self.get_argument("lift_lvl3", "0"))
 
         _op = DrumstickUserLogic()
         _ = _op.update_gamedata(user_id,
@@ -67,3 +67,22 @@ class DrumstickUserHandler(RequestHandler):
         else:
             self.finish(json.dumps({"state": 1}))
 
+
+class DrumstickRecommendHandler(RequestHandler):
+    """
+    分享注册人的情况
+    """
+
+    def get(self):
+        recommend_id = self.get_argument("recommend_id", "")
+        _op = DrumstickUserLogic()
+        _value = {
+            "recommend_id": recommend_id
+        }
+        _ = _op.getCountByRecommend(recommend_id=recommend_id)
+        if _:
+            result = {"state": 1, "message": "recommend count query success"}
+            result.update(_)
+            self.finish(json.dumps(result))
+        else:
+            self.finish(json.dumps({"state": 1, "message": "recommend count query error"}))

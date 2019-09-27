@@ -25,6 +25,7 @@ def _handlers():
 
         (r'/drumstick/wx_user/login$', drumstick.DrumstickWxLoginHandler, default_settings),
         (r'/drumstick/game/user$', drumstick.DrumstickUserHandler, default_settings),
+        (r'/drumstick/game/recommend$', drumstick.DrumstickRecommendHandler),
         (r'/drumstick/game/ad$', drumstick.DrumstickAdHandler, default_settings),
         (r'/drumstick/game/checkin$', drumstick.DrumstickCheckInHandler, default_settings),
 
