@@ -115,17 +115,25 @@ class DrumstickUserLogic(Base):
         :param recommend_id: 推荐人id
         :return:
         """
+        if not recommend_id:
+            return {
+                "no_active": [],
+                "active": []
+            }
         _user_list = self.lists(recommend_id= recommend_id)
-        active_count = 0
+        no_active = []
+        active = []
         for userInfo in _user_list:
-            timeArray = time.strptime(userInfo.updated_time, "%Y-%m-%d %H:%M:%S")
+            timeArray = time.strptime(userInfo.updated_time.strftime('%Y-%m-%d %H:%M:%S'), "%Y-%m-%d %H:%M:%S")
             oldTime = int(time.mktime(timeArray))  # 最后一次活跃时间
             currentTime = time.time()  # 当前时间戳
             if int(currentTime - oldTime)< 60*60*24*2:#2天内，算是活跃
-                active_count += 1
+                active.push({"avatar_url": userInfo.avatar_url})
+            else:
+                no_active.push({"avatar_url": userInfo.avatar_url})
         return {
-            "count": len(_user_list),
-            "active_count":active_count
+            "no_active":no_active,
+            "active":active
         }
 
 
