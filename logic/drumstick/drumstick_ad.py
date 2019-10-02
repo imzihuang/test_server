@@ -21,7 +21,7 @@ class DrumstickAdLogic(Base):
         """
         if not user_id:
             return False
-        userdb = UserDB()
+        userdb = DrumstickUserDB()
         user_info = userdb.info(user_id)
         if not user_info:
             return False
