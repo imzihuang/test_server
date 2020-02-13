@@ -1,0 +1,11 @@
+{
+    "applinks":{
+        "apps":[],
+        "details":[
+            {
+                "appID":"5Y83MUQX8Z.com.lhbgame.youxiji",
+                "paths":["/youxiji/*"]
+            }
+        ]
+    }
+}

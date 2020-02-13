@@ -31,6 +31,8 @@ def _handlers():
 
         (prefix + r'(.*\.(css|png|js))', StaticFileHandler,
          {'path': default_settings.get('static_path')}),
+        (r'(.*\.(css|png|js))', StaticFileHandler,
+         {'path': default_settings.get('static_path')}),
     ]
 
 api_handlers = _handlers()
