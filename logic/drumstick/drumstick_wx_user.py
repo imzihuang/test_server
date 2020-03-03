@@ -22,8 +22,8 @@ class DrumstickWXUserLogic(Base):
 
         userdb = DrumstickUserDB()
         #简单兼容
-        if recommend_id and not userdb.info(recommend_id):
-            recommend_id = ""
+        #if recommend_id and not userdb.info(recommend_id):
+        #    recommend_id = ""
 
         wx_user_values={
             "code": code,

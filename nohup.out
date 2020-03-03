@@ -1,0 +1,378 @@
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F87'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x87\xA8\xF0\x9F...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x87\xA8\xF0\x9F...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F8D'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8D\x80\xF0\x9F...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8D\x80\xF0\x9F...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F92'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\xA6\xF0\x9F...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\xA6\xF0\x9F...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F8C'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xB9\xE7\xBA...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xB9\xE7\xBA...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F92'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x95' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x95' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F8D'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8D\x80\xF0\x9F...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8D\x80\xF0\x9F...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F92'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x97\xE9\x9F...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x97\xE9\x9F...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F87'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x87\xA8\xF0\x9F...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x87\xA8\xF0\x9F...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x8D' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x8D' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F91'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x91\x80' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x91\x80' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F98'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x98\x88\xF0\x9F...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x98\x88\xF0\x9F...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F92'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x85\xE4\xBC...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x85\xE4\xBC...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F90'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x90\xAF \xF0...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x90\xAF \xF0...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Data truncated for column 'boss' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x8B  ...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x8B  ...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\xAB' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\xAB' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F92'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\xAEJU...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\xAEJU...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F91'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x91\xBE' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x91\xBE' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F8D'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8D\x92\xE4\xB8...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8D\x92\xE4\xB8...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F8E'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8E\x8820...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8E\x8820...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F92'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x8B' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x8B' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F90'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x90\xBE' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x90\xBE' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Data truncated for column 'boss' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Data truncated for column 'boss' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F91'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x91\xBF \xF0...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x91\xBF \xF0...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F8C'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xAA' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xAA' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F98'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x98\x98 \xF0...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x98\x98 \xF0...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F90'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x90\xB0' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x90\xB0' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F92'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\xAA' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\xAA' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\xA2 \xE7...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\xA2 \xE7...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09FA4'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\xA4\xA1' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\xA4\xA1' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F94'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x94\x9E' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x94\x9E' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xBB\xE4\xB8...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xBB\xE4\xB8...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xB9  ...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xB9  ...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x94\xA5\xE5\xA8...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x94\xA5\xE5\xA8...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x8B\xE6\x99...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x8B\xE6\x99...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F8E'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8E\x80\xE8\x81...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8E\x80\xE8\x81...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xB7' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xB7' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xB8 \xF0...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xB8 \xF0...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8E\x89 \xE5...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8E\x89 \xE5...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x91\xAB' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x91\xAB' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x90\xB2\xF0\x9F...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x90\xB2\xF0\x9F...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x9E' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x9E' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\xA4' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\xA4' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F8D'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8D\x92\xF0\x9F...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8D\x92\xF0\x9F...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8D\x8A \xF0...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8D\x8A \xF0...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F8C'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xBB' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xBB' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F8D'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8D\xAD  ...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8D\xAD  ...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09FA6'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\xA6\x90\xE5\xAD...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\xA6\x90\xE5\xAD...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Data truncated for column 'boss' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8D\xB0' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8D\xB0' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F92'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x8BZ' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x8BZ' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F98'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x98\x80' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x98\x80' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F90'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x90\x9D\xE5\x92...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x90\x9D\xE5\x92...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xB8' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xB8' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x93Li...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x93Li...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xB9\xE8\x96...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xB9\xE8\x96...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F91'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x91\x91\xF0\x9F...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x91\x91\xF0\x9F...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8D\xAD' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8D\xAD' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Data truncated for column 'barrier_nums' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x95\xE9\x98...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x95\xE9\x98...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09FA5'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\xA5\x95' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\xA5\x95' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x97\xE6\xB1...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x97\xE6\xB1...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x90\xAF' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x90\xAF' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xB9 \xF0...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xB9 \xF0...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xB7' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xB7' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xBA' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xBA' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x91\xA8' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x91\xA8' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8D\x92 \xE9...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8D\x92 \xE9...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F96'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x96\xA4' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x96\xA4' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xB9\xE5\xBC...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8C\xB9\xE5\xBC...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F0AFA0'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\xAF\xA0\xA5\xE4\xBB...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\xAF\xA0\xA5\xE4\xBB...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8D\xB9' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8D\xB9' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09FA4'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\xA4\xB8 \xEA...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\xA4\xB8 \xEA...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F8D'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8D\x8E \xE6...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x8D\x8E \xE6...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Invalid utf8 character string: 'F09F92'
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x98\xE4\xB8...' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x98\xE4\xB8...' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x95' for column 'user_name' at row 1
+  cursor.execute(statement, parameters)
+/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py:536: Warning: Incorrect string value: '\xF0\x9F\x92\x95' for column 'wx_name' at row 1
+  cursor.execute(statement, parameters)

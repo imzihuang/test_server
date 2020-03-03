@@ -81,7 +81,7 @@ class DrumstickRecommendHandler(RequestHandler):
         }
         _ = _op.getCountByRecommend(recommend_id=recommend_id)
         if _:
-            result = {"state": 1, "message": "recommend count query success"}
+            result = {"state": 0, "message": "recommend count query success"}
             result.update(_)
             self.finish(json.dumps(result))
         else:
