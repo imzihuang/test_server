@@ -1,0 +1,10 @@
+﻿tornado
+setproctitle
+simplejson
+six
+sqlalchemy
+pycrypto
+pymysql
+configparser
+requests
+alembic
